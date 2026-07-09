@@ -1,6 +1,6 @@
 ---
 name: n-whys
-description: Generate a why-chain exactly n levels deep for any topic, question, observation, problem, or idea. Invoke like `n-whys n=8 q=<my question>` to drill down through n layers of explanation, causality, assumptions, or principles.
+description: Generate a why-chain exactly n levels deep for any topic, question, observation, problem, or idea. Invoke like `n-whys n=8 q=<my question>`. The general form of five-whys — use this when you want an explicit depth.
 compatibility: Created for Zo Computer
 metadata:
   author: rob.zo.computer
@@ -9,6 +9,8 @@ metadata:
 # N Whys
 
 Use this skill when the user invokes `n-whys` or asks for a why-chain of a specified depth.
+
+**Relationship to `five-whys`:** `five-whys` is a preset of this skill — depth ~5, root-cause orientation, flexible stopping. Use `n-whys` when the user wants a deliberate, exact depth or an unusually deep chain.
 
 ## Invocation
 
@@ -37,7 +39,20 @@ If `n` or `q` is missing, ask for the missing argument. If `n` is very large, pr
 
 N Whys generalizes the Five Whys. It repeatedly asks "why?" exactly `n` times to expose deeper causes, assumptions, mechanisms, incentives, constraints, or principles beneath a surface question.
 
-The chain can be causal, conceptual, strategic, psychological, philosophical, or practical depending on the topic.
+The chain can take several forms depending on the topic:
+
+- **causal** — event chains, mechanisms, failures
+- **conceptual** — deeper premises behind a claim
+- **incentive-based** — who benefits, what pressures exist
+- **psychological** — motivations, fears, needs
+- **philosophical** — grounding values and assumptions
+
+## Canonical questions
+
+- Why do people procrastinate on work they care about? (n=8)
+- Why is the sky blue? (n=6, physics chain)
+- Why do startups die? (n=10)
+- Why does this abstraction feel wrong? (n=5)
 
 ## Procedure
 

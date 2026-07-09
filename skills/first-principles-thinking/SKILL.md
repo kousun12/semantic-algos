@@ -60,3 +60,15 @@ Use this concise structure unless the user asks otherwise:
 - Do not reduce away human, social, legal, or ethical constraints when they are fundamental to the problem.
 - State uncertainty clearly when a supposed principle is actually an empirical claim.
 - Prefer useful decomposition over theatrical reduction.
+
+## Canonical questions
+
+Best when the conventional answer might be cargo-culted and the fundamentals are checkable:
+
+- "Why do batteries cost what they cost — what's the floor?"
+- "Does our company actually need a sales team?"
+- "What would education look like if we designed it today from scratch?"
+- "Is a 30-year mortgage actually the right structure for home financing?"
+- "Why do meetings default to 30 or 60 minutes?"
+
+Poor fits: questions where convention *is* the answer (etiquette, coordination standards like which side of the road to drive on), or where the fundamentals are unknowable.

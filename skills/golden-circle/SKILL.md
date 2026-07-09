@@ -56,3 +56,15 @@ Use this concise structure unless the user asks otherwise:
 - Keep the What concrete.
 - Distinguish motivation from marketing language.
 - If the Why, How, and What are misaligned, say so directly and propose a tighter version.
+
+## Canonical questions
+
+Best for pitches, positioning, and alignment checks:
+
+- "Help me write the intro slide for my startup pitch."
+- "Our product page lists 14 features — what should it actually say?"
+- "Why am I actually doing this side project?"
+- "Rewrite this job posting so good candidates care."
+- "Does our roadmap match our stated mission?"
+
+Poor fits: causal analysis ("why did X fail?" — use n-whys), and problems with no audience or purpose dimension.

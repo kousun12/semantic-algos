@@ -1,6 +1,6 @@
 ---
 name: five-whys
-description: Use the Five Whys method as a thinking tool for any question, problem, failure, confusion, or decision where the user wants to move from surface symptoms to deeper causes, assumptions, or principles.
+description: Root-cause analysis preset — drill from a surface symptom to deeper causes, assumptions, or principles by asking "why" ~5 times. A convenience preset of the more general n-whys skill (which takes an explicit depth n).
 compatibility: Created for Zo Computer
 metadata:
   author: rob.zo.computer
@@ -10,9 +10,26 @@ metadata:
 
 Use this skill when a question, problem, observation, bug, decision, emotional reaction, disagreement, or confusing situation would benefit from drilling down through layers of causality.
 
+**Relationship to `n-whys`:** this is a preset of `n-whys` with a default depth of ~5 and a root-cause orientation. If the user wants a specific depth, or a deliberately deep chain, use `n-whys n=<k> q=<question>` instead.
+
 ## Purpose
 
 The Five Whys method repeatedly asks "why?" to move from the obvious surface explanation toward deeper causes. The goal is not always exactly five steps; stop when the next "why" becomes speculative, circular, or no longer useful.
+
+The chain need not be strictly causal. Depending on the topic it can be:
+
+- **causal** — event chains, mechanisms, failures
+- **conceptual** — deeper premises behind a claim
+- **incentive-based** — who benefits, what pressures exist
+- **philosophical** — what values or assumptions ground the position
+
+## Canonical questions
+
+- Why did the deployment fail?
+- Why are users dropping off after signup?
+- Why does this team keep missing commitments?
+- Why does this product feel harder to explain than it should?
+- Why do I keep avoiding this task?
 
 ## Procedure
 

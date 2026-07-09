@@ -69,6 +69,18 @@ Roughly 500–900 words total. Child is the longest, Camel is the most grounded,
 - Repeating the same point in different words across rungs.
 - Letting any rung stand alone without engaging the previous one.
 
+## Canonical topics
+
+Best for topics where inherited convention weighs heavily and creative reframing is possible:
+
+- Marriage
+- The 40-hour work week
+- Academic peer review
+- Homeownership
+- Retirement
+
+Poor fits: neutral technical mechanisms ("how does TCP work") where there's no inherited burden to carry or negate.
+
 ## Invocation
 
 When the user invokes this skill, ask only for the topic if one isn't given. Otherwise, produce the ladder directly with no preamble.

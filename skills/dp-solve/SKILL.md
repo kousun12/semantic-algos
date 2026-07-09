@@ -34,6 +34,15 @@ If `q` is missing, ask for the question or problem.
 
 Many hard questions are not single-step questions. They are composed of smaller questions, and those smaller questions often recur across multiple branches of the reasoning. A normal recursive decomposition can duplicate work or produce inconsistent answers. DP-style reasoning turns the problem into a subproblem graph, keeps a memo of subanswers, and reuses them when synthesizing the final answer.
 
+**When to use vs. alternatives:** dp-solve shines when subquestions *recur* across branches. If the question is a linear causal drill-down, use `five-whys`/`n-whys`. If it's a one-shot comparison between options, a decision matrix may suffice. If there's no overlap between subproblems, this is just ordinary decomposition and the memo table adds ceremony.
+
+## Canonical questions
+
+- Should we migrate off this vendor? (cost, risk, and timing subquestions recur across options)
+- How should I think about hiring for this role? (team needs, market, budget overlap across candidate profiles)
+- What is the best way to explain Zo Computer? (audience, metaphor, and differentiator subquestions recur across framings)
+- Why does this system feel brittle? (shared root causes appear under multiple symptoms)
+
 ## Procedure
 
  1. **State the problem.** Rewrite `q` as the target problem to solve.

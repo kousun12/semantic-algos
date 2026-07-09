@@ -72,6 +72,18 @@ Roughly 700–1200 words total. Gigabrain is the longest, High School the shorte
 - Repeating the same point in different words across rungs. Each rung must add a genuinely new layer.
 - Using the same hedge or metaphor in two different rungs.
 
+## Canonical topics
+
+Topics with real depth at every rung work best — a mechanism, a literature, a philosophical dimension, and a human truth underneath:
+
+- Why is the sky blue?
+- Inflation
+- How does evolution produce altruism?
+- What is money?
+- Sleep
+
+Poor fits: trivia with no depth ("what year did X happen"), pure how-to questions, topics where the PhD and Gigabrain rungs would say the same thing.
+
 ## Invocation
 
 When the user invokes this skill, ask only for the topic if one isn't given. Otherwise, produce the ladder directly with no preamble.

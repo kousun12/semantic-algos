@@ -1,8 +1,6 @@
 # semantic-algos
 
-Squishy semantic programs for LLM agents — reusable reasoning procedures that solve open-ended questions with "algorithmic" sequencing of prompts. Each skill is a thinking tool, not a code tool: it tells the agent *how* to structure its reasoning.
-
-[![skills.sh](https://skills.sh/b/kousun12/semantic-algos)](https://skills.sh/kousun12/semantic-algos)
+Semantic algorithms: squishy, general-purpose reasoning programs for LLM agents. Each skill is an "algorithmic" sequencing of prompts — a repeatable procedure for attacking open-ended questions, the way sorting algorithms attack lists.
 
 ## Install
 
@@ -10,25 +8,57 @@ Squishy semantic programs for LLM agents — reusable reasoning procedures that 
 npx skills add kousun12/semantic-algos
 ```
 
-Or install specific skills:
+Or install a single skill:
 
 ```bash
-npx skills add kousun12/semantic-algos --skill dp-solve --skill n-whys
+npx skills add kousun12/semantic-algos --skill dp-solve
 ```
 
 ## Skills
 
+### Decompose
 | Skill | What it does |
-| --- | --- |
-| [`dp-solve`](skills/dp-solve) | Dynamic-programming-style reasoning: decompose into overlapping subproblems, memoize subanswers, synthesize from the memo table. |
-| [`n-whys`](skills/n-whys) | Parameterized why-chain, exactly *n* levels deep. Invoke like `n-whys n=8 q=<question>`. |
-| [`five-whys`](skills/five-whys) | Classic Five Whys — drill from surface symptoms to root causes and assumptions. |
-| [`explanation-ladder`](skills/explanation-ladder) | Explain a topic at five escalating levels — High School → College → PhD → Philosopher → Gigabrain — each responding to the last. |
-| [`nietzche-ladder`](skills/nietzche-ladder) | Three-stage Nietzschean explanation: Camel (burden), Lion (negation), Child (creative affirmation). |
-| [`ladder-of-abstraction`](skills/ladder-of-abstraction) | Move deliberately between concrete particulars and abstract principles. |
-| [`first-principles-thinking`](skills/first-principles-thinking) | Strip assumptions and rebuild the answer from fundamentals instead of analogy or convention. |
-| [`golden-circle`](skills/golden-circle) | Separate purpose, method, and output: Why → How → What. |
+|---|---|
+| [dp-solve](skills/dp-solve) | Dynamic-programming reasoning: decompose into overlapping subproblems, memoize subanswers, synthesize bottom-up |
+| [first-principles-thinking](skills/first-principles-thinking) | Strip inherited assumptions, rebuild from irreducible fundamentals |
+| [assumption-audit](skills/assumption-audit) | Enumerate every load-bearing assumption, grade confidence × criticality, name the cheapest tests |
 
-## Why "semantic algorithms"?
+### Drill
+| Skill | What it does |
+|---|---|
+| [n-whys](skills/n-whys) | Why-chain exactly n levels deep (`n-whys n=8 q=...`) |
+| [five-whys](skills/five-whys) | The classic root-cause preset of n-whys |
 
-Classical algorithms sequence deterministic operations over exact data. These skills sequence *prompts* over *meaning* — the control flow is precise (decompose, iterate n times, ascend the ladder) but each step is executed by an LLM's judgment. The result is a repeatable procedure for open-ended problems.
+### Reframe
+| Skill | What it does |
+|---|---|
+| [inversion](skills/inversion) | Solve backwards: how would we guarantee failure? Then avoid it |
+| [counterfactual](skills/counterfactual) | Minimal intervention, forward propagation, contingent-vs-overdetermined verdict |
+| [analogy-transfer](skills/analogy-transfer) | Abstract to deep structure, find structural twins in far domains, import their mechanisms |
+| [ladder-of-abstraction](skills/ladder-of-abstraction) | Move deliberately between concrete instances and abstract principles |
+
+### Decide
+| Skill | What it does |
+|---|---|
+| [decision-matrix](skills/decision-matrix) | Weighted criteria over named options, with sensitivity analysis and a gut check |
+| [golden-circle](skills/golden-circle) | Clarify Why → How → What and check their alignment |
+
+### Explain
+| Skill | What it does |
+|---|---|
+| [explanation-ladder](skills/explanation-ladder) | Five escalating voices — High School → College → PhD → Philosopher → Gigabrain — each responding to the last |
+| [nietzche-ladder](skills/nietzche-ladder) | Camel → Lion → Child: burden, negation, creative affirmation |
+
+## What makes a semantic algorithm
+
+Each skill has the same anatomy:
+
+1. **A control structure** — a fixed sequence, recursion, or table-fill that shapes the reasoning
+2. **A procedure** — numbered steps an agent executes in order
+3. **An output format** — a stable shape for the answer
+4. **Guardrails** — the known failure modes of the method, stated explicitly
+5. **Canonical questions** — golden examples of where the method shines, and where it doesn't
+
+They compose: run `assumption-audit` before `decision-matrix`; use `n-whys` on a symptom, then `inversion` on the fix; `dp-solve` a big question and apply `analogy-transfer` to one stubborn subproblem.
+
+[![skills.sh](https://img.shields.io/badge/skills.sh-semantic--algos-blue)](https://www.skills.sh/kousun12/semantic-algos)

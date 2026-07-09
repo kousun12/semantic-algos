@@ -54,3 +54,13 @@ Use this concise structure unless the user asks otherwise:
 - Avoid drowning in details without naming the pattern.
 - When explaining, move down to examples before moving back up to the principle.
 - When deciding, choose the abstraction level that changes the action.
+
+## Canonical questions
+
+- "My pitch isn't landing — is it too abstract or too concrete?"
+- "We keep arguing about this feature; are we even talking about the same level of the problem?"
+- "Turn this pile of user complaints into a product principle."
+- "This mission statement feels empty — ground it."
+- "Why does this essay feel simultaneously vague and rambling?"
+
+Poor fits: questions that live entirely at one level (a pure implementation bug, a pure values debate with no instances available).
