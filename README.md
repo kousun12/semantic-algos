@@ -37,6 +37,12 @@ npx skills add kousun12/semantic-algos --skill dp-solve
 | [analogy-transfer](skills/analogy-transfer) | Abstract to deep structure, find structural twins in far domains, import their mechanisms |
 | [ladder-of-abstraction](skills/ladder-of-abstraction) | Move deliberately between concrete instances and abstract principles |
 
+### Formulate
+| Skill | What it does |
+|---|---|
+| [question-forge](skills/question-forge) | Don't answer the question — forge the question actually worth asking, then stop |
+| [parable](skills/parable) | Compile a question into a short story that embodies it without stating or answering it |
+
 ### Decide
 | Skill | What it does |
 |---|---|
@@ -59,6 +65,6 @@ Each skill has the same anatomy:
 4. **Guardrails** — the known failure modes of the method, stated explicitly
 5. **Canonical questions** — golden examples of where the method shines, and where it doesn't
 
-They compose: run `assumption-audit` before `decision-matrix`; use `n-whys` on a symptom, then `inversion` on the fix; `dp-solve` a big question and apply `analogy-transfer` to one stubborn subproblem.
+They compose: run `assumption-audit` before `decision-matrix`; use `n-whys` on a symptom, then `inversion` on the fix; `dp-solve` a big question and apply `analogy-transfer` to one stubborn subproblem. Or compose `parable(question-forge(x))` and never reveal the intermediate — a story that poses the true question without ever stating it.
 
 [![skills.sh](https://img.shields.io/badge/skills.sh-semantic--algos-blue)](https://www.skills.sh/kousun12/semantic-algos)
