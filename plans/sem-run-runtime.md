@@ -646,7 +646,7 @@ Use a hidden sentinel in an undeclared sibling file for the isolation evaluation
 
 ## Phase 2: Implement `sem-compile`
 
-- **Status:** Not started
+- **Status:** Done
 - **Depends on:** Phase 1
 - **Objective:** Deliver a compiler skill that turns requests of any fidelity into clear, flexible semantic programs without answering or executing them.
 - **Scope:** `skills/sem-compile/SKILL.md`, `skills/sem-compile/agents/openai.yaml`, `skills/sem-compile/references/compilation-protocol.md`, and refinements to its existing language/example references.
@@ -760,3 +760,12 @@ The intended system is smaller and stranger: a shared notation, a repository of 
 - **Commit:** `11ebea9` (`Add Sem language conventions`).
 - **Deviations:** None to product behavior. Packaging validation used equivalent manual checks because the external validator dependency was unavailable.
 - **Remaining risks:** The external skill validator has not run; frontmatter and UI metadata were checked independently.
+
+### 2026-07-18 — Phase 2: Implement `sem-compile`
+
+- **Summary:** Completed the compile-only skill workflow and compilation protocol for natural language, loose sketches, and existing-program revisions. Added repository-local contract discovery, exact operator selection, local shims, style-mechanism lowering, ambiguity and stopping policies, bundle writing, and fresh compiler handoff.
+- **Validation:** `git diff --check`, Ruby YAML/frontmatter/UI metadata checks, reference-link checks, and Markdown/YAML-only inventory passed. Three temporary compilations were successfully reconstructed by fresh reader agents. The external `quick_validate.py` check remains unavailable because its environment lacks PyYAML.
+- **Review:** Independent phase review blocked effectful requests instead of encoding them, tightened source-as-data and read-scope rules, and made default destination resolution workspace-relative. No unresolved findings.
+- **Commit:** `1bf1ff3` (`Implement Sem compiler workflow`).
+- **Deviations:** None to the squishy language design. Effectful source intent is now explicitly preserved in a blocked compilation rather than becoming a local operator.
+- **Remaining risks:** Packaging validation still relies on equivalent manual checks because the external validator dependency is unavailable.
