@@ -29,18 +29,20 @@ npx skills add kousun12/semantic-algos --list
 
 ## Use
 
-Invoke a skill by name and give it a question:
+Invoke a skill by name and give it a question. The best inputs often sound almost too simple to need a method:
 
 ```text
 n-whys n=7 q=Why is the sky blue?
-explanation-ladder q=What is The Brothers Karamazov about?
-ladder-of-abstraction q=Explain If You Give a Mouse a Cookie
-first-principles-thinking q=What makes a dinner party memorable?
-question-forge q=How should I spend a completely free Saturday?
-analogy-transfer q=How can a new city begin to feel like home?
+n-whys n=8 q=Why do we work?
+assumption-audit q=Everything happens for a reason.
+first-principles-thinking q=What makes a promise binding?
+question-forge q=How do I know what I really want?
+analogy-transfer q=How do you know when enough is enough?
+nietzche-ladder q=What do children owe their parents?
+explanation-ladder q=Why do people tell stories?
 ```
 
-The syntax is only a useful convention. Natural language works too: “Take *The Brothers Karamazov* up the ladder of abstraction.”
+The syntax is only a useful convention. Natural language works too: “Ask what a promise is from first principles.”
 
 The same procedure can cross domains because its control structure is semantic rather than numerical. For example, one honest route through `n-whys n=7 q=Why is the sky blue?` is:
 
@@ -54,15 +56,19 @@ The same procedure can cross domains because its control structure is semantic r
 
 The question begins in atmospheric physics and ends at the philosophy of perception. A different chain might branch elsewhere; the skill's job is to make every step visible enough to challenge.
 
+Run the same operator on `Why do we work?` and the route might pass through food and shelter, coordination, surplus, status, identity, recognition, and the wish to matter. The shift between biological, historical, and motivational explanations is part of the answer; a good why-chain names it rather than pretending the question has a single root.
+
 Other prompts reveal different characteristic shapes:
 
 | Prompt | Where the procedure can take it |
 | --- | --- |
-| `explanation-ladder` on *The Brothers Karamazov* | From a family murder to competing accounts of freedom, faith, responsibility, and what people owe one another. |
-| `ladder-of-abstraction` on *If You Give a Mouse a Cookie* | From a comic chain of requests, to a circular narrative, to feedback loops in desire and care. |
-| `first-principles-thinking` on a dinner party | Past menus and decoration to attention, ease, pacing, surprise, and the conditions under which strangers become a group. |
-| `question-forge` on a free Saturday | From optimizing a schedule to asking what kind of day would feel as though it actually belonged to you. |
-| `analogy-transfer` on making a city feel like home | Toward the mechanisms used by pilgrimages, neighborhood rituals, games, and recurring public places to turn strangers into participants. |
+| `assumption-audit` on “Everything happens for a reason” | Separates causes from purposes, explanations from consolations, and a belief's usefulness from its truth. |
+| `first-principles-thinking` on a promise | Removes custom, reputation, and punishment to ask what remains: consent, reliance, and continuity with the person who gave their word. |
+| `question-forge` on “What do I really want?” | Distinguishes appetite, imitation, recognition, and obligation, then returns the question whose answer would actually cost something. |
+| `analogy-transfer` on knowing when enough is enough | Looks for stopping rules in foraging, medicine, art, games, and search, then asks which ones survive contact with a human life. |
+| `nietzche-ladder` on what children owe their parents | Moves from inherited duty, through refusal of the debt, toward an obligation that could be chosen freely. |
+| `explanation-ladder` on why people tell stories | Climbs from entertainment and memory through social rehearsal and identity to the need to make a life intelligible. |
+| `ladder-of-abstraction` on *If You Give a Mouse a Cookie* | Moves from a comic chain of requests, to a circular narrative, to feedback loops in desire and care. |
 
 Choose a procedure that matches the shape of the question. A weighted matrix is useful when the options are known. It is useless while the options themselves remain unknown. A why-chain can expose a cause, but it can also invent one if the links are treated as facts. Each skill includes its own dispatch rules, failure modes, output form, and canonical questions.
 
@@ -108,14 +114,16 @@ Choose a procedure that matches the shape of the question. A weighted matrix is 
 Each skill is an operator. Chained together, they become small semantic programs for curiosity, interpretation, decisions, and ordinary life. The notation below describes the flow; it is not a runtime or a new language.
 
 ```text
-n-whys[7]("Why is the sky blue?") → explanation-ladder(deepest principle)
+n-whys[8]("Why do we work?") → assumption-audit(deepest claim)
+question-forge("How do I know what I really want?") → n-whys[7](forged question)
+first-principles-thinking("What makes a promise binding?") → inversion(candidate rule)
 ladder-of-abstraction("If You Give a Mouse a Cookie") → analogy-transfer(repeating structure)
-dp-solve("What is The Brothers Karamazov about?") → explanation-ladder(most-reused theme) → resynthesize
-question-forge("How should I spend a free Saturday?") → decision-matrix(options under the forged criteria)
-first-principles-thinking("What makes a dinner party good?") → inversion(candidate plan)
+dp-solve("What is The Brothers Karamazov about?") → question-forge(most-reused tension) → parable(forged question)
 ```
 
-The first program can begin with scattering and end with the strange fact that color belongs to a relationship, not to an object alone. The mouse's chain can become a general model of self-renewing desire and then be tested against distant examples. The Karamazov program can memoize the themes shared by different characters and episodes, deepen the one doing the most explanatory work, and fold it back into an account of the whole novel. The Saturday and dinner-party programs turn ordinary life into something structured enough to reason about without pretending it is reducible to arithmetic.
+The work program can reach the claim that work gives life meaning, then audit whose work counts and whether the claim survives examples of care, art, play, and idleness. The desire program forges a vague question into one with stakes, then follows it through appetite, imitation, recognition, freedom, and mortality. The promise program rebuilds obligation from its primitives, then tries to construct a rule that would reliably turn promises into traps or excuses.
+
+The mouse's chain becomes a model of self-renewing desire and is tested against distant examples. The Karamazov program memoizes the questions shared by different characters and episodes, forges the one doing the most explanatory work, and returns a new story instead of an essay about the old one.
 
 Composition also adds choices that a single skill does not have: which intermediate results remain visible, when to branch, when to iterate, and what form the final result should take. A compound program may run a table internally and return a letter, a dissent, a parable, or a post-mortem instead of the table.
 
