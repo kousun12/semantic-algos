@@ -32,13 +32,37 @@ npx skills add kousun12/semantic-algos --list
 Invoke a skill by name and give it a question:
 
 ```text
-dp-solve q=Should we migrate off this vendor?
-n-whys n=8 q=Why do I keep rebuilding my task system?
-assumption-audit q=Restaurants will pay for this product.
-analogy-transfer q=How can we shorten the time before a new user sees value?
+n-whys n=7 q=Why is the sky blue?
+explanation-ladder q=What is The Brothers Karamazov about?
+ladder-of-abstraction q=Explain If You Give a Mouse a Cookie
+first-principles-thinking q=What makes a dinner party memorable?
+question-forge q=How should I spend a completely free Saturday?
+analogy-transfer q=How can a new city begin to feel like home?
 ```
 
-The syntax is only a useful convention. Natural language works too: “Run an assumption audit on this plan.”
+The syntax is only a useful convention. Natural language works too: “Take *The Brothers Karamazov* up the ladder of abstraction.”
+
+The same procedure can cross domains because its control structure is semantic rather than numerical. For example, one honest route through `n-whys n=7 q=Why is the sky blue?` is:
+
+1. The sky looks blue because air molecules scatter the shorter visible wavelengths of sunlight more strongly than the longer ones.
+2. That bias comes from Rayleigh scattering, whose strength rises sharply as wavelength falls.
+3. Rayleigh's rule applies because the molecules are much smaller than the wavelengths of visible light; the light's electric field turns them into tiny reradiators.
+4. There is blue light available to scatter because the hot Sun emits a broad spectrum rather than a single wavelength.
+5. We see blue rather than violet because the solar spectrum, atmospheric absorption, and human visual sensitivity weight the scattered wavelengths differently.
+6. Visual sensitivity matters because a perceived hue comes from the relative responses of several kinds of cone cell, not from a wavelength carrying a color name.
+7. “Blue” is therefore neither simply painted onto the sky nor invented inside the head; it arises when a brain interprets the encounter among light, air, and eyes.
+
+The question begins in atmospheric physics and ends at the philosophy of perception. A different chain might branch elsewhere; the skill's job is to make every step visible enough to challenge.
+
+Other prompts reveal different characteristic shapes:
+
+| Prompt | Where the procedure can take it |
+| --- | --- |
+| `explanation-ladder` on *The Brothers Karamazov* | From a family murder to competing accounts of freedom, faith, responsibility, and what people owe one another. |
+| `ladder-of-abstraction` on *If You Give a Mouse a Cookie* | From a comic chain of requests, to a circular narrative, to feedback loops in desire and care. |
+| `first-principles-thinking` on a dinner party | Past menus and decoration to attention, ease, pacing, surprise, and the conditions under which strangers become a group. |
+| `question-forge` on a free Saturday | From optimizing a schedule to asking what kind of day would feel as though it actually belonged to you. |
+| `analogy-transfer` on making a city feel like home | Toward the mechanisms used by pilgrimages, neighborhood rituals, games, and recurring public places to turn strangers into participants. |
 
 Choose a procedure that matches the shape of the question. A weighted matrix is useful when the options are known. It is useless while the options themselves remain unknown. A why-chain can expose a cause, but it can also invent one if the links are treated as facts. Each skill includes its own dispatch rules, failure modes, output form, and canonical questions.
 
@@ -81,16 +105,19 @@ Choose a procedure that matches the shape of the question. A weighted matrix is 
 
 ## Composition
 
-The skills can be chained. The notation below describes the flow; it is not a runtime or a new language.
+Each skill is an operator. Chained together, they become small semantic programs for curiosity, interpretation, decisions, and ordinary life. The notation below describes the flow; it is not a runtime or a new language.
 
 ```text
-assumption-audit(plan) → decision-matrix(options)
-five-whys(symptom) → inversion(proposed fix)
-dp-solve(problem) → analogy-transfer(low-confidence subproblem) → resynthesize
-parable(question-forge(raw question))
+n-whys[7]("Why is the sky blue?") → explanation-ladder(deepest principle)
+ladder-of-abstraction("If You Give a Mouse a Cookie") → analogy-transfer(repeating structure)
+dp-solve("What is The Brothers Karamazov about?") → explanation-ladder(most-reused theme) → resynthesize
+question-forge("How should I spend a free Saturday?") → decision-matrix(options under the forged criteria)
+first-principles-thinking("What makes a dinner party good?") → inversion(candidate plan)
 ```
 
-Composition adds choices that a single skill does not have: which intermediate results remain visible, when to branch, when to iterate, and what form the final result should take. A compound program may run a table internally and return a letter, a dissent, a parable, or a post-mortem instead of the table.
+The first program can begin with scattering and end with the strange fact that color belongs to a relationship, not to an object alone. The mouse's chain can become a general model of self-renewing desire and then be tested against distant examples. The Karamazov program can memoize the themes shared by different characters and episodes, deepen the one doing the most explanatory work, and fold it back into an account of the whole novel. The Saturday and dinner-party programs turn ordinary life into something structured enough to reason about without pretending it is reducible to arithmetic.
+
+Composition also adds choices that a single skill does not have: which intermediate results remain visible, when to branch, when to iterate, and what form the final result should take. A compound program may run a table internally and return a letter, a dissent, a parable, or a post-mortem instead of the table.
 
 ## User-space programs
 
