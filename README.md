@@ -118,16 +118,59 @@ Choose a procedure that matches the shape of the question. A weighted matrix is 
 
 ## Composition
 
-Each skill is an operator. Chained together, they become small semantic programs for curiosity, interpretation, decisions, and ordinary life. The notation below describes the flow; it is not a runtime or a new language.
+Each skill is an operator. Chained together, they become small semantic programs for curiosity, interpretation, decisions, and ordinary life.
 
-```text
-n-whys[8]("Why do we work?") → assumption-audit(deepest claim)
-question-forge("How do I know what I really want?") → n-whys[7](forged question)
-first-principles-thinking("What makes a promise binding?") → inversion(candidate rule)
-ladder-of-abstraction("If You Give a Mouse a Cookie") → analogy-transfer(repeating structure)
-dp-solve("What is The Brothers Karamazov about?") → question-forge(most-reused tension) → parable(forged question)
-question-forge("Is missing someone a way of keeping them?") → lyric(forged question)
+As an optional way to describe these compositions, this repository borrows Haskell's compact, function-oriented style. The examples are Haskell-flavored diagrams, not necessarily valid Haskell and not a runtime or new language. Camel-cased names such as `questionForge` refer to installed skills such as `question-forge`.
+
+```haskell
+work =
+  nWhys `with` { depth = 8, question = "Why do we work?" }
+  >>> assumptionAudit `with` { focus = deepestClaim }
+
+desire =
+  questionForge "How do I know what I really want?"
+  >>> nWhys `with` { depth = 7 }
+
+promise =
+  firstPrinciples "What makes a promise binding?"
+  >>> inversion `with` { focus = candidateRule }
+
+mouse =
+  ladderOfAbstraction "If You Give a Mouse a Cookie"
+  >>> analogyTransfer `with` { focus = repeatingStructure }
+
+karamazov =
+  dpSolve "What is The Brothers Karamazov about?"
+  >>> questionForge `with` { focus = mostReusedTension }
+  >>> parable
+
+missing =
+  questionForge "Is missing someone a way of keeping them?"
+  >>> lyric
 ```
+
+The small notation is meant to stay readable rather than formally complete:
+
+```haskell
+f >>> g                 -- sequence: pass f's result to g
+f &&& g                 -- fan out: run both on the same input
+f <|> g                 -- choose or fall back between routes
+f `with` { option = x } -- configure an operator
+map f                   -- apply f to every result
+repeat n f              -- iterate or deepen an operator
+```
+
+For example, a program can branch into several interpretations and bring them back together:
+
+```haskell
+deepAnalysis =
+  questionForge
+  >>> (firstPrinciples &&& inversion &&& analogyTransfer)
+  >>> synthesize
+  >>> assumptionAudit
+```
+
+Haskell readers may recognize that these effectful, context-carrying steps are closer to Kleisli composition (`>=>`) than pure function composition (`.`). The public notation uses `>>>` because the left-to-right flow is easier to read.
 
 The work program can reach the claim that work gives life meaning, then audit whose work counts and whether the claim survives examples of care, art, play, and idleness. The desire program forges a vague question into one with stakes, then follows it through appetite, imitation, recognition, freedom, and mortality. The promise program rebuilds obligation from its primitives, then tries to construct a rule that would reliably turn promises into traps or excuses.
 
