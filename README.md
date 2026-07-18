@@ -2,7 +2,11 @@
 
 [![skills.sh](https://skills.sh/b/kousun12/semantic-algos)](https://skills.sh/kousun12/semantic-algos)
 
-A collection of reasoning procedures for language-model agents.
+> “As if Socrates, Dijkstra, and GStack had a baby”
+>
+> — Rick Ruben
+
+Stdlib of reasoning procedures to milk the humanities out of LLMs
 
 Ordinary programs sequence exact operations over data. These skills sequence interpretive operations over questions: drill into causes, expose premises, compare options, move between levels of abstraction, or turn a question into a story. The steps are fixed enough to repeat and loose enough to require judgment. That is what we mean by a **semantic algorithm**.
 
