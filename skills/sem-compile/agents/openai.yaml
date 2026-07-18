@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sem Compile"
+  short_description: "Compile prose into a squishy semantic program"
+  default_prompt: "Use $sem-compile to express this request as a squishy semantic program without running it."
