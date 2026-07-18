@@ -8,7 +8,7 @@
 
 Stdlib of reasoning procedures to milk the humanities out of LLMs
 
-Ordinary programs sequence exact operations over data. These skills sequence interpretive operations over questions: drill into causes, expose premises, compare options, move between levels of abstraction, or turn a question into a story. The steps are fixed enough to repeat and loose enough to require judgment. That is what we mean by a **semantic algorithm**.
+Ordinary programs sequence exact operations over data. These skills sequence interpretive operations over questions: drill into causes, expose premises, compare options, move between levels of abstraction, or turn a question into a story or lyric. The steps are fixed enough to repeat and loose enough to require judgment. That is what we mean by a **semantic algorithm**.
 
 ## Install
 
@@ -44,6 +44,7 @@ question-forge q=How do I know what I really want?
 analogy-transfer q=How do you know when enough is enough?
 nietzche-ladder q=What do children owe their parents?
 explanation-ladder q=Why do people tell stories?
+lyric q=Is missing someone a way of keeping them?
 ```
 
 The syntax is only a useful convention. Natural language works too: “Ask what a promise is from first principles.”
@@ -73,6 +74,7 @@ Other prompts reveal different characteristic shapes:
 | `nietzche-ladder` on what children owe their parents | Moves from inherited duty, through refusal of the debt, toward an obligation that could be chosen freely. |
 | `explanation-ladder` on why people tell stories | Climbs from entertainment and memory through social rehearsal and identity to the need to make a life intelligible. |
 | `ladder-of-abstraction` on *If You Give a Mouse a Cookie* | Moves from a comic chain of requests, to a circular narrative, to feedback loops in desire and care. |
+| `lyric` on whether missing someone keeps them near | Gives the contradiction a speaker, an addressee, an image field, and a phrase whose meaning changes each time it returns. |
 
 Choose a procedure that matches the shape of the question. A weighted matrix is useful when the options are known. It is useless while the options themselves remain unknown. A why-chain can expose a cause, but it can also invent one if the links are treated as facts. Each skill includes its own dispatch rules, failure modes, output form, and canonical questions.
 
@@ -112,6 +114,7 @@ Choose a procedure that matches the shape of the question. A weighted matrix is 
 | [`nietzche-ladder`](skills/nietzche-ladder) | Pass a topic through Nietzsche's Camel, Lion, and Child: inheritance, refusal, and creation. |
 | [`golden-circle`](skills/golden-circle) | Separate purpose, method, and output, then check whether Why, How, and What agree. |
 | [`parable`](skills/parable) | Compile a question into a short story that embodies the tension without stating or settling it. |
+| [`lyric`](skills/lyric) | Compile a question into a poem or song whose voice, images, sound, and recurrence embody the tension. |
 
 ## Composition
 
@@ -123,13 +126,14 @@ question-forge("How do I know what I really want?") → n-whys[7](forged questio
 first-principles-thinking("What makes a promise binding?") → inversion(candidate rule)
 ladder-of-abstraction("If You Give a Mouse a Cookie") → analogy-transfer(repeating structure)
 dp-solve("What is The Brothers Karamazov about?") → question-forge(most-reused tension) → parable(forged question)
+question-forge("Is missing someone a way of keeping them?") → lyric(forged question)
 ```
 
 The work program can reach the claim that work gives life meaning, then audit whose work counts and whether the claim survives examples of care, art, play, and idleness. The desire program forges a vague question into one with stakes, then follows it through appetite, imitation, recognition, freedom, and mortality. The promise program rebuilds obligation from its primitives, then tries to construct a rule that would reliably turn promises into traps or excuses.
 
-The mouse's chain becomes a model of self-renewing desire and is tested against distant examples. The Karamazov program memoizes the questions shared by different characters and episodes, forges the one doing the most explanatory work, and returns a new story instead of an essay about the old one.
+The mouse's chain becomes a model of self-renewing desire and is tested against distant examples. The Karamazov program memoizes the questions shared by different characters and episodes, forges the one doing the most explanatory work, and returns a new story instead of an essay about the old one. The missing-someone program sharpens its contradiction, gives it to a particular speaker, and lets a repeated phrase change meaning instead of supplying an answer.
 
-Composition also adds choices that a single skill does not have: which intermediate results remain visible, when to branch, when to iterate, and what form the final result should take. A compound program may run a table internally and return a letter, a dissent, a parable, or a post-mortem instead of the table.
+Composition also adds choices that a single skill does not have: which intermediate results remain visible, when to branch, when to iterate, and what form the final result should take. A compound program may run a table internally and return a letter, a dissent, a parable, a lyric, or a post-mortem instead of the table.
 
 ## User-space programs
 
