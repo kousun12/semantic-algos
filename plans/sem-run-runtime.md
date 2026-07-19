@@ -717,7 +717,7 @@ Use a hidden sentinel in an undeclared sibling file for the isolation evaluation
 
 ## Phase 5: Integrate Sem into the repository README
 
-- **Status:** Not started
+- **Status:** Done
 - **Depends on:** Phase 4
 - **Objective:** Present the repository as a standard library plus its squishy compiler and interpreter, with a clear one-line entry point.
 - **Scope:** `README.md` and final UI metadata corrections if documentation review exposes drift.
@@ -787,3 +787,12 @@ The intended system is smaller and stranger: a shared notation, a repository of 
 - **Commit:** `3cf7a43` (`Add Sem behavioral evaluations`).
 - **Deviations:** The first isolation, bounded-iteration, and partial-failure compilations exposed over-eager adapter applications. Those traces were retained for diagnosis, the contract was fixed generally rather than with test-specific programs, and clean corrected runs supplied the acceptance evidence.
 - **Remaining risks:** Fresh-agent isolation is behavioral rather than OS-enforced when the host shares a filesystem; the sentinel case verifies prompt discipline but cannot prove a sandbox boundary.
+
+### 2026-07-19 — Phase 5: Integrate Sem into the repository README
+
+- **Summary:** Reframed the repository as Sem's semantic standard library plus the `sem-compile` and `sem-run` language tools. Documented full-pack installation, the one-line natural-language entry point, compile-only use, Haskell-esque but non-parsed programs, local constructs, fresh application workers, the Markdown run directory, and the absence of a parser, type checker, generated code, or checked-in executable runtime.
+- **Validation:** All 23 repository-relative README links resolve, all 17 existing semantic-skill category entries remain in their original order, fenced blocks are balanced, both external skill validators pass through an isolated `uv` PyYAML environment, the scoped no-code inventory passes, and `git diff --check` passes.
+- **Review:** Independent phase review corrected the full-pack CLI example to use `--skill '*'`, distinguished successful result artifacts from failed-application status records, and narrowed the no-code claim to generated code and checked-in executable runtime. No unresolved findings.
+- **Commit:** `89b5988` (`Document Sem compiler and runtime`).
+- **Deviations:** UI metadata already matched the documented behavior, so no Phase 5 metadata changes were necessary.
+- **Remaining risks:** None specific to documentation; the runtime's behavioral rather than OS-level filesystem isolation remains documented explicitly.
