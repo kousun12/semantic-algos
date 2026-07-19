@@ -15,8 +15,12 @@ Ordinary programs sequence exact operations over data. These skills sequence int
 Install the full pack:
 
 ```bash
-npx skills add kousun12/semantic-algos
+npx skills add kousun12/semantic-algos --skill '*'
 ```
+
+This is the recommended installation for [`sem-run`](skills/sem-run): a Sem
+program may call any skill in the repository's standard library, and the full
+pack keeps those function contracts available to the compiler and runner.
 
 Install one or more skills:
 
@@ -82,6 +86,13 @@ Choose a procedure that matches the shape of the question. A weighted matrix is 
 
 ## The standard library
 
+The semantic skills under `skills/*` are Sem's standard library. Each skill's
+`SKILL.md` is its function contract: it defines when the operator fits, the
+procedure it follows, its output form, stopping rule, and guardrails. The two
+language tools, [`sem-compile`](skills/sem-compile) and
+[`sem-run`](skills/sem-run), live in the same collection but orchestrate the
+library rather than acting as ordinary semantic functions inside a program.
+
 ### Causes and premises
 
 | Skill | Operation |
@@ -119,11 +130,83 @@ Choose a procedure that matches the shape of the question. A weighted matrix is 
 | [`lyric`](skills/lyric) | Compile a question into a poem or song whose voice, images, sound, and recurrence embody the tension. |
 | [`joke`](skills/joke) | Compile a topic into a setup and punchline that switch between two compatible frames. |
 
+## Language tooling
+
+| Skill | Operation |
+| --- | --- |
+| [`sem-compile`](skills/sem-compile) | Compile natural language, a loose pipeline, or an existing `program.md` into a readable Sem program and compile notes, without running or answering it. |
+| [`sem-run`](skills/sem-run) | Compile when needed, interpret the program, run every semantic application in a fresh subagent, and return a linked Markdown trace. |
+
+The one-line entry point is natural language; no fidelity or syntax mode is
+required:
+
+```text
+$sem-run thinking about leaving my job, it's a drag, i get paid a lot and am respected but it is soul crushing - tell me a story like kafka would tell it, then a song like bob dylan would write it, and finally a joke like norm macdonald would tell it
+```
+
+One valid compilation of that request is the following. It keeps the dilemma
+open, lowers the named styles to broad mechanisms instead of imitation, shares
+one upstream tension, and returns the three independent forms in the requested
+order:
+
+```haskell
+use [question-forge, parable, lyric, joke]
+
+local extractTension(input: { dilemma: Dilemma, question: ForgedQuestion })
+  -> CreativeBrief:
+  preserve high pay and respect versus drudgery and felt soul-loss
+  return one primary opposed pair and at most two supporting pairs
+  stop after one supported brief; do not advise staying or leaving
+
+leavingMyJob = do
+  dilemma =
+    { question = "Should I stay or leave?"
+    , gains = [highPay, respect]
+    , costs = [drudgery, lossOfSoul]
+    }
+
+  question <- questionForge dilemma
+  tension <- extractTension { dilemma = dilemma, question = question }
+
+  outputs <-
+    tension
+    >>> ( parable `with`
+            { mechanisms = [bureaucraticSurrealism, dreamLogic,
+                            helplessEscalation] }
+          &&& lyric `with`
+            { form = narrativeFolkBallad
+            , mechanisms = [recurringRefrain, propheticImagery,
+                            slantRhyme, moralAmbiguity] }
+          &&& joke `with`
+            { form = shortDeadpanShaggyDog
+            , mechanisms = [suspiciousLiteralism, delayedFrameShift,
+                            anticlimacticPunchline] }
+        )
+
+  hide [dilemma, question, tension]
+  pure outputs >>> order [Story, Song, Joke]
+```
+
+For compile-only work, invoke the compiler directly:
+
+```text
+$sem-compile Find the real question in why I keep volunteering for work I resent, then express a route from that question to a parable.
+```
+
+`sem-compile` writes `request.md`, `program.md`, and `compile-notes.md` under a
+collision-safe `sem-programs/<title>/<timestamp>/` bundle and stops. It does
+not execute the program or answer the request.
+
 ## Composition
 
 Each skill is an operator. Chained together, they become small semantic programs for curiosity, interpretation, decisions, and ordinary life.
 
-As an optional way to describe these compositions, this repository borrows Haskell's compact, function-oriented style. The examples are Haskell-flavored diagrams, not necessarily valid Haskell and not a runtime or new language. Camel-cased names such as `questionForge` refer to installed skills such as `question-forge`.
+The Haskell-esque diagrams below are executable Sem conventions: pass one to
+`sem-run` as a rough sketch or save it as `program.md`. Camel-cased names such
+as `questionForge` resolve to installed skills such as `question-forge`.
+Punctuation, indentation, type-like hints, and combinators help a language
+model recover the applications and dataflow; they do not need to be valid
+Haskell or conform to a fixed grammar.
 
 ```haskell
 work =
@@ -156,7 +239,7 @@ meetings =
   >>> joke
 ```
 
-The small notation is meant to stay readable rather than formally complete:
+The notation stays deliberately rough and readable:
 
 ```haskell
 f >>> g                 -- sequence: pass f's result to g
@@ -166,6 +249,58 @@ f `with` { option = x } -- configure an operator
 map f                   -- apply f to every result
 repeat n f              -- iterate or deepen an operator
 ```
+
+Sem programs may define local shims such as `extractTension` or invent a
+one-off construct when the standard library does not contain the right move.
+The program must gloss the construct well enough to recover its inputs,
+semantic applications, output, stopping behavior, and guardrails. Local
+constructs belong to that program; using one does not silently add a new skill
+to the standard library.
+
+`sem-run` gives every semantic application its own fresh, no-history subagent
+and records every successful result as a standalone artifact. That includes
+standard-library calls, local operators, fan-out branches, mapped items,
+iteration predicates, selectors, and semantic synthesis. Naming a value or
+ordering already-produced results is structural and does not create another
+application. Fresh context is an application-level isolation boundary, not a
+claim of OS-level filesystem sandboxing.
+
+The entire run is recorded as Markdown so it can be inspected or resumed from
+files alone. A representative layout is:
+
+```text
+sem-runs/<title>/<timestamp>/
+  request.md
+  compiler-prompt.md
+  program.md
+  compile-notes.md
+  interpretation.md
+  run.md
+  inputs/
+  applications/
+    001-question-forge/
+      prompt.md
+      result.md
+      status.md
+    002-extract-tension/
+      prompt.md
+      result.md
+      status.md
+  finalizer-prompt.md
+  final.md
+```
+
+Each application has its own prompt and status; each successful application
+also has a standalone result. `final.md` presents or links the returned
+artifacts in the program's declared order, describes what actually ran,
+reports partial or blocked work, and links every other Markdown artifact in
+the trace.
+
+Sem has no parser, type checker, generated code, or checked-in executable
+runtime. The compiler clarifies prose into more explicit prose; the runner
+interprets it and delegates semantic work. Different valid compilations and
+runs may vary, but each must make its intent, application boundaries, dataflow,
+and return order recoverable.
 
 For example, a program can branch into several interpretations and bring them back together:
 
@@ -187,7 +322,10 @@ Composition also adds choices that a single skill does not have: which intermedi
 
 ## User-space programs
 
-The standard library supplies the operators. The following user-space programs are compositions and design sketches. They show the larger space of possible semantic programs. This repository does not install them.
+The standard library supplies the operators. The following user-space programs
+are Sem compositions that can be run from inline text or a `program.md`. They
+show the larger space of possible semantic programs, but this repository does
+not install them as named functions.
 
 ### Hidden intermediates and literary forms
 
