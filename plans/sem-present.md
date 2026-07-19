@@ -744,7 +744,7 @@ or whether an optional stage deserves its own node does not.
 
 ## Phase 4: Evaluate reconstruction across run shapes
 
-- **Status:** Not started
+- **Status:** Done
 - **Depends on:** Phase 3
 - **Objective:** Establish that fresh presentation agents can turn irregular
   but valid Markdown traces into graph bundles from which fresh consumers
@@ -926,4 +926,47 @@ any future UI can render that vocabulary without having to understand Sem.
   plan deviation.
 - **Downstream:** Phase 4 can invoke the completed emission protocol in fresh
   contexts for reconstruction evaluations.
+- **Remaining risks / manual checks:** None.
+
+### 2026-07-19 — Phase 4: Evaluate reconstruction across run shapes
+
+- **Status:** Done
+- **Primary workers:** implementer `/root/phase4_implement`; reviewer
+  `/root/phase4_review` (GPT-5.6-sol, high effort).
+- **Producer workers:** `/root/phase4_implement/producer_single`,
+  `producer_fanout`, `producer_dynamic`, `producer_retry`,
+  `producer_imported`, and `producer_snapshot`.
+- **Consumer workers:** `/root/phase4_implement/consumer_single`,
+  `consumer_fanout`, `consumer_dynamic`, `consumer_retry`,
+  `consumer_imported`, and `consumer_snapshot`.
+- **Verifier workers:** `/root/phase4_implement/verifier_single`,
+  `verifier_fanout`, `verifier_dynamic`, `verifier_retry`,
+  `verifier_imported`, `verifier_snapshot`, and
+  `verifier_dynamic_recheck`.
+- **Review recheck workers:** `/root/phase4_review/dynamic_forward_recheck`,
+  `dynamic_consumer_recheck`, `snapshot_forward_recheck`,
+  `snapshot_corrected_forward`, and `snapshot_consumer_recheck` (all fresh
+  GPT-5.6-sol, high-effort contexts).
+- **Summary:** Added six behavioral evaluation specifications with
+  reproducible raw-run shapes, material facts, explicit degrees of freedom,
+  failure signs, fixed-consumer checks, and recorded fresh-context producer,
+  consumer, and verifier evidence.
+- **Validation:** All six candidate and canonical bundles validated with exact
+  source-inventory and application-mapping parity. The 44-test validator suite,
+  both positive fixture CLIs, standard skill validation, required-section and
+  filename checks, placeholder/temp-path scans, and `git diff --check` passed.
+- **Review:** Removed two evaluation confounds: the dynamic case now stops on
+  a round-2 semantic `true` before a three-round maximum, and the snapshot raw
+  trace now explicitly establishes all three local operator names/kinds.
+  Fresh producers and consumers passed both corrected cases. No reusable skill
+  or validator defect remained.
+- **Implementation commit:** `792efe9` (`Add sem-present reconstruction
+  evaluations`).
+- **Deviations:** A dynamic-bundle notes wording ambiguity was corrected and
+  independently rechecked. A retry verifier retracted two initial concerns
+  after rereading primary evidence; no retry-bundle change was made. Temporary
+  evidence was moved recoverably to Trash.
+- **Concurrent user change:** Preserved `e813938` (`Ignore local semantic run
+  artifacts`) without amendment; it was not attributed to any phase worker.
+- **Downstream:** Phase 5 can document the validated producer/consumer handoff.
 - **Remaining risks / manual checks:** None.
