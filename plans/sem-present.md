@@ -657,7 +657,7 @@ or whether an optional stage deserves its own node does not.
 
 ## Phase 2: Build the deterministic validator
 
-- **Status:** Not started
+- **Status:** Done
 - **Depends on:** Phase 1
 - **Objective:** Make structural correctness, path safety, application
   coverage, and artifact coverage mechanically enforceable without judging the
@@ -864,4 +864,31 @@ any future UI can render that vocabulary without having to understand Sem.
 - **Deviations:** None.
 - **Downstream:** Phase 2 must mechanically enforce the explicit hidden-path,
   application-directory, inventory, reference, and symlink rules.
+- **Remaining risks / manual checks:** None.
+
+### 2026-07-19 — Phase 2: Build the deterministic validator
+
+- **Status:** Done
+- **Workers:** implementer `/root/phase2_implement`; reviewer
+  `/root/phase2_review` (GPT-5.6-sol, high effort).
+- **Summary:** Added the dependency-free `validate_view.py` CLI/library, two
+  positive run fixtures, and comprehensive unit coverage for the manifest
+  envelope, references, inventory, filesystem safety, application mappings,
+  accepted results, groups, statuses, candidate manifests, and canonical
+  notes.
+- **Validation:** `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s
+  tests/sem_present` passed 44 tests; direct CLI validation passed for both
+  positive fixtures; `python3 -m py_compile` passed with an isolated cache;
+  fixture JSON parsing and `git diff --check` passed. The reviewer's malformed
+  value sweep passed 5,802 mutations across both fixtures and all reference
+  manifests.
+- **Review:** Hardened duplicate-key and non-finite JSON rejection, invalid
+  UTF-8/NUL/deep-nesting handling, RFC 3339 timestamps, stable diagnostic
+  indexes, application metadata containment, canonical result-panel targets,
+  candidate containment, and unencodable CLI diagnostics. No unresolved
+  findings remain.
+- **Implementation commit:** `b8e118f` (`Add sem-present bundle validator`).
+- **Deviations:** None; the Phase 1 contract and schema required no changes.
+- **Downstream:** Phase 3 can validate `view/manifest.next.json` before safely
+  promoting a candidate bundle.
 - **Remaining risks / manual checks:** None.
