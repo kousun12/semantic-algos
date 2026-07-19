@@ -25,7 +25,10 @@ Follow this workflow:
    when its real contract fits.
 3. Clarify the dataflow with the least notation that makes every semantic
    application, input, dependency, stopping rule, visible return, and return
-   order recoverable. Preserve useful irregularity and ambiguity.
+   order recoverable. Preserve useful irregularity and ambiguity. Do not add
+   adapter applications merely to rename, restate, scope, or question-shape
+   text that the selected contract can already interpret from its declared
+   input.
 4. Mark and define program-local operators when no standard-library contract
    fits. Translate named-person style requests into broad mechanisms before
    placing them in executable applications.

@@ -103,6 +103,16 @@ If one of those moves requires judgment, name the judgment as an application.
 For example, `order [story, song]` is structural, while “choose the more honest
 story” is a semantic selector and must be explicit.
 
+Do not manufacture judgment merely to regularize shapes. When the selected
+contract's documented procedure includes the needed interpretation, its worker
+can receive the declared semantic text directly—for example, an enclosing
+result containing the claim it audits, or the exact prior value the user
+declared as the next round's input. This does not relax exact-contract
+selection: if identifying the target or converting the input is a distinct
+material judgment outside that procedure, expose it as an application. Naming
+failure status in the final report is bookkeeping, not a separate semantic
+application.
+
 ### Sequence
 
 `a >>> f >>> g` means the result of `f a` is the declared input to `g`. When `g`

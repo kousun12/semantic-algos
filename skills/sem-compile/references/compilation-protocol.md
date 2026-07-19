@@ -133,9 +133,16 @@ For each candidate, compare the needed move with the contract's:
 Select the skill only when these align. A similar name, desired output label, or
 application-local option does not make an adjacent contract exact. Configuration
 may narrow or flavor a skill application; it may not replace the skill's core
-procedure. When semantic adaptation is required before a skill can accept an
-input, make that adaptation an explicit local application. Purely packaging
-already-produced values into a record remains structural.
+procedure. First prefer passing the declared enclosing text or artifact and
+using configuration to identify the intended claim, question, section, or role
+when the selected contract's documented procedure already performs that
+interpretation. Do not insert a local adapter merely to rename, restate,
+extract, scope, or turn prose into question syntax when that procedure can
+operate on the original semantic text without changing its defining behavior.
+When a materially different semantic transformation is truly required before
+the skill can accept the input, make that adaptation an explicit local
+application and explain why the downstream contract cannot do it. Purely
+packaging or projecting an explicitly labeled value remains structural.
 
 Use folder slugs as stable identities in `use [...]` and compile notes. Camel
 case is only a readability convention in the program body. Never invent a
@@ -161,6 +168,28 @@ to the request. Use the least ceremony that lets a fresh reader recover:
 - upstream dependencies and independent branches;
 - dynamic applications created by mapping, iteration, or route selection;
 - visible terminal artifacts and their presentation order.
+
+Treat the number of semantic applications as part of the program's meaning.
+Start from the applications the user requested and add another only when it
+performs a necessary transformation or judgment that no requested application
+already owns. In particular:
+
+- a source statement may flow directly as semantic text to a requested
+  question-oriented function when framing the question is part of that
+  function's documented procedure; do not invent a question-shaping prepass
+  solely for grammatical tidiness;
+- a downstream skill may receive an enclosing artifact and be configured to
+  operate on the claim or section it is already responsible for identifying;
+- an upstream value may become the next iteration's input without a restating
+  adapter when the user explicitly declared that propagation;
+- final status, failure, visibility, and ordering prose belongs to runtime
+  bookkeeping and finalization unless the user explicitly asks for a distinct
+  semantic artifact derived from that metadata.
+
+If the request states or implies an application ceiling, expansion formula, or
+named per-round operations, audit the compiled inventory against that budget.
+Adapters count. Never make a bounded construct exceed its own ceiling through
+compiler-added preparation or presentation workers.
 
 Expose shared preprocessing before fan-out. Do not duplicate it inside branches
 unless repeated independent interpretation is intended. Expose semantic
@@ -354,8 +383,9 @@ Use `None` where a section has no entries. Record why each repository function
 is an exact fit, not its entire copied contract. Record consequential inferences
 and unresolved alternatives, not every formatting choice. In the handoff audit,
 confirm that applications, inputs, dependencies, dynamic expansion, stopping,
-visibility, and order are recoverable; do not create a canonical graph or claim
-machine validation.
+visibility, and order are recoverable; also confirm that no adapter or
+presentation worker inflates a user-declared application budget. Do not create
+a canonical graph or claim machine validation.
 
 A blocked compilation still writes the three artifacts when a caller requires
 a bundle. Mark both the notes and program clearly; do not disguise a hole as an
