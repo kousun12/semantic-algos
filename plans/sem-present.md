@@ -784,7 +784,7 @@ or whether an optional stage deserves its own node does not.
 
 ## Phase 5: Document the producer/consumer handoff
 
-- **Status:** Not started
+- **Status:** Done
 - **Depends on:** Phase 4
 - **Objective:** Make the three Sem boundaries and the future renderer's
   deterministic loading contract discoverable without implying that a UI has
@@ -969,4 +969,34 @@ any future UI can render that vocabulary without having to understand Sem.
 - **Concurrent user change:** Preserved `e813938` (`Ignore local semantic run
   artifacts`) without amendment; it was not attributed to any phase worker.
 - **Downstream:** Phase 5 can document the validated producer/consumer handoff.
+- **Remaining risks / manual checks:** None.
+
+### 2026-07-19 — Phase 5: Document the producer/consumer handoff
+
+- **Status:** Done
+- **Workers:** implementer `/root/phase5_implement`; fresh consumer
+  `/root/phase5_implement/phase5_consumer`; reviewer `/root/phase5_review`;
+  fresh documentation reader `/root/phase5_review/phase5_fresh_reader` (all
+  GPT-5.6-sol, high effort).
+- **Summary:** Added `sem-present` beside `sem-compile` and `sem-run` in the
+  README, documented explicit existing-run invocation and the additive
+  `view/manifest.json` plus `view/notes.md` layout, and established the
+  authoritative-Markdown/disposable-projection boundary. Documented the fixed
+  future-consumer algorithm, containment and fallback rules, and the explicit
+  absence of a renderer, UI, layout engine, live watcher, or graph-library
+  configuration.
+- **Validation:** The 44-test validator suite, both positive fixture CLIs,
+  standard skill validation, manifest schema JSON parsing, metadata alignment,
+  prohibited-promise scan, and `git diff --check` passed. All 25
+  repository-relative README links resolved. A fresh consumer safely
+  enumerated a 9-artifact bundle from the manifest alone, and a separate fresh
+  reader reconstructed the documented producer/consumer contract without
+  semantic Markdown inference.
+- **Review:** The README cleanly separates compilation, execution,
+  presentation projection, and future rendering; it makes no conflicting UI
+  or determinism promises. No reviewer changes or unresolved findings remain.
+- **Implementation commit:** `2c858f9` (`Document sem-present handoff`).
+- **Deviations:** None.
+- **Downstream:** All phases are complete; run aggregate validation and the
+  final whole-feature review before publishing.
 - **Remaining risks / manual checks:** None.
