@@ -1000,3 +1000,44 @@ any future UI can render that vocabulary without having to understand Sem.
 - **Downstream:** All phases are complete; run aggregate validation and the
   final whole-feature review before publishing.
 - **Remaining risks / manual checks:** None.
+
+### 2026-07-19 — Final whole-feature review
+
+- **Status:** Done
+- **Workers:** final reviewer `/root/final_review`; contract/schema audit
+  `/root/final_review/contract_schema_audit`; emission/promotion audit
+  `/root/final_review/emission_protocol_audit`; evaluation/docs/integration
+  audit `/root/final_review/eval_docs_merge_audit`; validator correctness audit
+  `/root/final_review/validator_security_audit`; final-fix implementer
+  `/root/final_fix_implement` (all GPT-5.6-sol, high effort).
+- **Review scope:** Audited the complete five-phase feature against this plan
+  and current `origin/main`, including contract/schema/example/validator
+  alignment, source authority, regeneration and rollback, active snapshots,
+  path and content safety, reconstruction evaluations, metadata, README, and
+  the clean merge of the two upstream README commits.
+- **Findings and fixes:** Closed all P1/P2 findings. Regeneration now uses
+  generation-specific candidate pairs, exact manifest-and-notes identity
+  checks, cooperative promotion serialization, and full authoritative-source
+  quiescence through promotion. The schema and validator now enforce
+  status/snapshot consistency, explicit application status, coherent canonical
+  accepted results, machine-renderable returned roots, and iterative cycle
+  checks for deeply nested groups. All six evaluations now require structural
+  reconstruction from manifest fields alone and reserve Markdown for displayed
+  content or independent post-reconstruction verification.
+- **Validation:** `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s
+  tests/sem_present` passed 52 tests; both retained fixture CLIs, manifest
+  schema JSON and Draft 2020-12 checks, all three reference examples, standard
+  skill validation, repository-relative links, six evaluation provenance
+  sections, prohibited-content scans, and `git diff --check` passed. No cache,
+  temporary, unrelated, or untracked artifacts remain.
+- **Final-fix commit:** `c89e490` (`Harden sem-present integration`).
+- **Integration:** Merged current `origin/main` at `c18999b` without rebasing in
+  `58f7013`; both upstream README edits remain present. Preserved concurrent
+  user-owned commit `e813938` without amendment or worker attribution.
+- **Deviations:** Replaced the plan's illustrative fixed candidate filenames
+  with collision-resistant generation-specific pairs and a cooperative guard
+  after final review exposed a concurrent-regeneration race. This is a
+  safety-driven implementation refinement, not hard host-level isolation or a
+  product-scope change. The first validator-audit turn hit an automated risk
+  filter; its rephrased local correctness review completed successfully.
+- **Remaining risks / manual checks:** None. Ready to publish.
