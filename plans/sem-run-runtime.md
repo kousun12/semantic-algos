@@ -805,3 +805,11 @@ The intended system is smaller and stranger: a shared notation, a repository of 
 - **Commit:** `89b5988` (`Document Sem compiler and runtime`).
 - **Deviations:** UI metadata already matched the documented behavior, so no Phase 5 metadata changes were necessary.
 - **Remaining risks:** None specific to documentation; the runtime's behavioral rather than OS-level filesystem isolation remains documented explicitly.
+
+### 2026-07-19 — Final end-to-end review
+
+- **Summary:** Reviewed the compiler, runtime, examples, evaluations, README, and implementation plan as one system. Closed the remaining seams between authorized source inputs, application-worker prompts, terminal semantic failures, result acceptance, and the motivating shared-tension example.
+- **Validation:** Both external skill validators, frontmatter/UI YAML checks, scoped link and anchor checks, balanced Markdown fences, Markdown/YAML-only inventory, README category preservation, and `git diff --check` passed.
+- **Review:** Declared semantic failures now produce no canonical `result.md` and cannot be mistaken for accepted output; workers can receive explicitly authorized run-local source copies as well as upstream results; the compact motivating example supplies both the original dilemma and forged question to its local tension extractor. No unresolved findings.
+- **Commit:** `913d8e2` (`Tighten Sem runtime contracts`).
+- **Remaining risks:** Filesystem isolation remains behavioral rather than OS-enforced when the host shares a workspace, as documented and evaluated with the hidden-sentinel case.
