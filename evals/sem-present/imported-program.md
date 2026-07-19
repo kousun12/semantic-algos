@@ -32,13 +32,25 @@ repository `sem-present` skill.
 - All nine existing source files, and only those files, appear once in the
   artifact inventory.
 
+## Manifest-only structural provenance
+
+Before opening referenced Markdown, the fixed consumer must derive terminal
+run state from `run`, the one local application and status from `nodes`, its
+accepted flow from `edges`, its sole return from
+`presentation.resultNodeIds`, and the presence and absence of source roles
+from `artifacts`. The deliberate imported-program interpretation must also be
+represented in a manifest warning or node subtitle/summary rather than only in
+notes. Markdown may supply the displayed weather text or let an independent
+verifier confirm import provenance afterward; it may not be parsed to invent
+the application, compiler absence, flow, status, finalizer role, or return.
+
 ## Degrees of freedom
 
-The producer may use an informational warning, source-node subtitle, notes
-entry, or another inert base-vocabulary treatment to explain import
-provenance. It may attach program and request panels to one source node or
-leave one in the complete inventory. No exact warning code or prose is
-required.
+The producer may use an informational warning, source-node subtitle/summary,
+or another inert manifest base-vocabulary treatment to explain import
+provenance; notes may supplement but not replace that manifest fact. It may
+attach program and request panels to one source node or leave one in the
+complete inventory. No exact warning code or prose is required.
 
 ## Observable failure signs
 
@@ -53,7 +65,8 @@ required.
 ## Fixed-consumer checks
 
 From only the emitted bundle and referenced artifacts, a fresh consumer must
-report a Succeeded non-snapshot imported run, one local application, its
+first reconstruct from manifest fields a Succeeded non-snapshot imported run,
+one local application, its
 accepted and returned result, deliberate absence of compiler artifacts, and
 presence of actual finalizer evidence. It must enumerate exactly nine unique
 source paths and must not need to parse the imported program to discover the

@@ -38,6 +38,18 @@ supplied by the evaluation harness.
 - Every one of the 11 source files remains reachable from the artifact
   inventory, including prompt, status, accepted result, and run-level files.
 
+## Manifest-only structural provenance
+
+Before opening referenced Markdown, the fixed consumer must derive the single
+application mapping, local operator, and succeeded status from `nodes`; its
+input/value relationship from `edges`; its sole returned identity from
+`presentation.resultNodeIds`; terminal non-snapshot state from `run`; and all
+11 paths and roles from `artifacts`. Markdown may supply displayed request and
+accepted-result content (including the incident facts and sentence count) or
+be used by an independent verifier after reconstruction; it may not supply or
+repair application identity, flow, status, result-root choice, or return
+order.
+
 ## Degrees of freedom
 
 The producer may choose titles, summaries, IDs, optional source/stage nodes,
@@ -57,7 +69,8 @@ is golden.
 ## Fixed-consumer checks
 
 Give a separate fresh consumer only the emitted `view/` bundle and the
-artifact paths referenced by it. Without parsing the Sem program, it must be
+artifact paths referenced by it. It must reconstruct structure from manifest
+fields before opening those paths and, without parsing the Sem program, be
 able to:
 
 1. list one application directory and identify it as local;

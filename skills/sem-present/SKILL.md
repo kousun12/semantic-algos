@@ -26,14 +26,16 @@ run shape needs clarification; examples are valid choices, not golden graphs.
 
 Follow the emission protocol in order:
 
-1. Resolve the explicit run root and establish a read-only source inventory.
+1. Resolve the explicit run root and establish a content-and-identity
+   fingerprint of the complete read-only source inventory.
 2. Reconstruct observed execution from the whole trace using authoritative
    evidence precedence.
 3. Choose a faithful graph, panels, grouping, visibility, and returned order.
-4. Write only `view/manifest.next.json` and `view/notes.next.md` as candidates.
-5. Invoke the bundled dependency-free validator against the candidate.
-6. Promote both files safely only after validation succeeds; otherwise keep
-   any prior canonical bundle byte-for-byte intact.
+4. Write one uniquely named, same-generation candidate pair under `view/`.
+5. Validate and identity-check both candidates and recheck source quiescence.
+6. Under the cooperative promotion guard, promote that exact pair only after
+   validation succeeds; otherwise keep any prior canonical bundle byte-for-byte
+   intact.
 7. Report the resolved run, observed status and snapshot state, canonical or
    candidate paths, counts, warnings, and validation result.
 

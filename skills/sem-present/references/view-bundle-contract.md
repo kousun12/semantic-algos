@@ -123,7 +123,10 @@ quiescent but unfinished run is normally `running` with `snapshot: true`; use
 
 `snapshot` means the source run was non-terminal at `generatedAt`. It does not
 mean the bundle is an incremental log. Regenerate the entire projection after
-the run changes.
+the run changes. A snapshot status is one of `unknown`, `pending`, `ready`, or
+`running`; a non-snapshot status is one of `succeeded`, `failed`, `blocked`, or
+`partial`. Do not combine a terminal status with `snapshot: true` or an active
+status with `snapshot: false`.
 
 IDs are nonempty, stable within one generated bundle, and unique in their
 scope. Artifact, node, edge, and group IDs are unique across their respective
@@ -204,10 +207,16 @@ When the operator is recoverable, `application.operator.kind` is
 `standard-library`, `local`, or `semantic-judgment`, with an optional name.
 No formal Sem signature is required.
 
-An application node may itself be listed in `resultNodeIds` and expose its
-accepted `result.md` as a result panel. Create a separate `result` node only
-when a structural return, collection, or final document benefits from its own
-navigable identity. Do not force a bipartite application/value graph.
+Every application node has a normalized `status`, using `unknown` when the
+trace does not establish a more specific state. A canonical root `result.md`
+exists only for a `succeeded` application, and every succeeded application has
+that canonical accepted result.
+
+An application node may itself be listed in `resultNodeIds`; when it is, it
+exposes its accepted `result.md` as a result panel. Create a separate `result`
+node only when a structural return, collection, or final document benefits
+from its own navigable identity. Do not force a bipartite application/value
+graph.
 
 ### Panels
 
@@ -308,6 +317,14 @@ Every referenced ID exists in `nodes`. These arrays do not hide unreferenced
 nodes or artifacts. A consumer initially frames featured and result nodes, then
 allows traversal to all other content.
 
+Every `resultNodeIds` entry has node type `application` or `result`. A returned
+application exposes its own canonical `applications/<id>/result.md` through a
+`role: "result"` panel, so the fixed consumer can render the return without
+inferring it from inventory. Use an explicit `result` node for a structural
+value, collection, or final-document identity; it exposes one or more canonical
+accepted application results or `final.md` through `role: "result"` panels.
+Source, stage, group, event, and note nodes are not return roots.
+
 Result order is the declared return/presentation order, not execution,
 directory, completion, or filesystem order. A succeeded run exposes at least
 one result node. A partial, failed, blocked, or active snapshot may have an
@@ -396,6 +413,16 @@ A valid version-1 producer output satisfies all of these conditions:
   inventoried;
 - accepted-result panels reference canonical accepted results, not rejected
   attempts;
+- run status and snapshot state use the terminal/non-terminal partition, and
+  every application node has a coherent normalized status;
+- every returned node is an `application` or `result`, and a returned
+  application exposes its own canonical accepted result panel while an
+  explicit result node exposes canonical accepted content through a result
+  panel;
+- the complete non-view source inventory remains content- and identity-stable
+  from reconstruction through promotion, regardless of run status;
+- concurrent invocations use uniquely paired candidates and promote only the
+  exact manifest/notes pair they validated;
 - group parent relationships are acyclic and reverse membership, when present,
   agrees with the groups;
 - succeeded runs declare at least one result node;

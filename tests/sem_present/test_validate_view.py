@@ -135,11 +135,11 @@ class PositiveBundleTests(ValidatorTestCase):
 
     def test_candidate_manifest_does_not_require_canonical_notes(self) -> None:
         run = self.copy_fixture()
-        candidate = run / "view" / "manifest.next.json"
+        candidate = run / "view" / "manifest.test-generation.next.json"
         shutil.copy2(run / "view" / "manifest.json", candidate)
         (run / "view" / "notes.md").unlink()
         self.assertDiagnostic(VALIDATOR.validate(run), "view/notes.md")
-        self.assertEqual([], VALIDATOR.validate(run, "view/manifest.next.json"))
+        self.assertEqual([], VALIDATOR.validate(run, "view/manifest.test-generation.next.json"))
 
     def test_validation_never_modifies_run(self) -> None:
         run = self.copy_fixture()
@@ -192,6 +192,43 @@ class StructureTests(ValidatorTestCase):
 
         _run, diagnostics = self.mutate(change)
         self.assertDiagnostic(diagnostics, "manifest.generatedAt")
+
+    def test_run_snapshot_and_status_must_agree(self) -> None:
+        cases = (
+            ("succeeded", True, "non-terminal"),
+            ("running", False, "terminal"),
+            ("partial", True, "non-terminal"),
+            ("unknown", False, "terminal"),
+        )
+        for index, (status, snapshot, expected) in enumerate(cases):
+            with self.subTest(status=status, snapshot=snapshot):
+                run = self.workspace / f"run-state-{index}"
+                shutil.copytree(FIXTURES / "minimal-success", run)
+                manifest = self.load_manifest(run)
+                manifest["run"].update(status=status, snapshot=snapshot)
+                self.write_manifest(run, manifest)
+                self.assertDiagnostic(VALIDATOR.validate(run), expected)
+
+    def test_each_run_state_partition_has_a_valid_pair(self) -> None:
+        pairs = (
+            ("unknown", True),
+            ("pending", True),
+            ("ready", True),
+            ("running", True),
+            ("succeeded", False),
+            ("failed", False),
+            ("blocked", False),
+            ("partial", False),
+        )
+        for index, (status, snapshot) in enumerate(pairs):
+            with self.subTest(status=status, snapshot=snapshot):
+                fixture = "active-partial" if snapshot else "minimal-success"
+                run = self.workspace / f"valid-run-state-{index}"
+                shutil.copytree(FIXTURES / fixture, run)
+                manifest = self.load_manifest(run)
+                manifest["run"].update(status=status, snapshot=snapshot)
+                self.write_manifest(run, manifest)
+                self.assertEqual([], VALIDATOR.validate(run))
 
     def test_nonstandard_json_constants_and_invalid_utf8_are_rejected(self) -> None:
         run = self.copy_fixture()
@@ -324,7 +361,7 @@ class InventoryAndPathTests(ValidatorTestCase):
         run = self.copy_fixture()
         outside = self.workspace / "outside.json"
         shutil.copy2(run / "view" / "manifest.json", outside)
-        candidate = run / "view" / "manifest.next.json"
+        candidate = run / "view" / "manifest.test-generation.next.json"
         candidate.symlink_to(outside)
         self.assertDiagnostic(VALIDATOR.validate(run, candidate), "manifest resolves outside the run root")
 
@@ -431,6 +468,14 @@ class ApplicationTests(ValidatorTestCase):
         _run, diagnostics = self.mutate(change)
         self.assertDiagnostic(diagnostics, "manifest.nodes[1].status: application with a canonical result.md")
 
+    def test_application_node_requires_status(self) -> None:
+        def change(manifest, _run):
+            del manifest["nodes"][1]["status"]
+
+        _run, diagnostics = self.mutate(change)
+        self.assertDiagnostic(diagnostics, "manifest.nodes[1].status: required for an application node")
+        self.assertDiagnostic(diagnostics, "application with a canonical result.md must have status 'succeeded'")
+
 
 class ResultsAndGroupsTests(ValidatorTestCase):
     def test_succeeded_run_requires_result_root(self) -> None:
@@ -439,6 +484,49 @@ class ResultsAndGroupsTests(ValidatorTestCase):
 
         _run, diagnostics = self.mutate(change)
         self.assertDiagnostic(diagnostics, "manifest.presentation.resultNodeIds: a succeeded run")
+
+    def test_returned_application_requires_its_result_panel(self) -> None:
+        def change(manifest, _run):
+            manifest["nodes"][1]["panels"] = [
+                panel for panel in manifest["nodes"][1]["panels"] if panel["role"] != "result"
+            ]
+
+        _run, diagnostics = self.mutate(change)
+        self.assertDiagnostic(diagnostics, "returned application must expose canonical accepted content")
+
+    def test_non_result_node_type_cannot_be_returned(self) -> None:
+        def change(manifest, _run):
+            manifest["presentation"]["resultNodeIds"] = ["n-request"]
+
+        _run, diagnostics = self.mutate(change)
+        self.assertDiagnostic(diagnostics, "returned node must have type 'application' or 'result'")
+
+    def test_structural_result_node_requires_an_accepted_result_panel(self) -> None:
+        run = self.copy_fixture()
+        manifest = self.load_manifest(run)
+        manifest["nodes"].append({
+            "id": "n-collection",
+            "type": "result",
+            "title": "Returned collection",
+            "emphasis": "primary",
+            "panels": [],
+        })
+        manifest["presentation"]["resultNodeIds"] = ["n-collection"]
+        self.write_manifest(run, manifest)
+        self.assertDiagnostic(
+            VALIDATOR.validate(run),
+            "returned result node must expose canonical accepted content",
+        )
+
+        manifest["nodes"][-1]["panels"] = [{
+            "id": "final",
+            "label": "Returned collection",
+            "artifactId": "a-final",
+            "role": "result",
+            "renderAs": "markdown",
+        }]
+        self.write_manifest(run, manifest)
+        self.assertEqual([], VALIDATOR.validate(run))
 
     def test_attempt_cannot_masquerade_as_accepted_result(self) -> None:
         run = self.copy_fixture()
@@ -519,6 +607,38 @@ class ResultsAndGroupsTests(ValidatorTestCase):
 
         _run, diagnostics = self.mutate(change)
         self.assertDiagnostic(diagnostics, "manifest.groups: parentGroupId cycle")
+
+    def test_deep_acyclic_group_chain_is_valid(self) -> None:
+        run = self.copy_fixture()
+        manifest = self.load_manifest(run)
+        manifest["groups"] = [
+            {
+                "id": f"g-{index}",
+                "title": f"Group {index}",
+                "type": "phase",
+                "memberNodeIds": [],
+                **({"parentGroupId": f"g-{index - 1}"} if index else {}),
+            }
+            for index in range(2000)
+        ]
+        self.write_manifest(run, manifest)
+        self.assertEqual([], VALIDATOR.validate(run))
+
+    def test_deep_group_cycle_returns_a_diagnostic(self) -> None:
+        run = self.copy_fixture()
+        manifest = self.load_manifest(run)
+        manifest["groups"] = [
+            {
+                "id": f"g-{index}",
+                "title": f"Group {index}",
+                "type": "phase",
+                "memberNodeIds": [],
+                "parentGroupId": f"g-{index - 1}" if index else "g-1999",
+            }
+            for index in range(2000)
+        ]
+        self.write_manifest(run, manifest)
+        self.assertDiagnostic(VALIDATOR.validate(run), "manifest.groups: parentGroupId cycle")
 
     def test_reverse_group_membership_must_agree(self) -> None:
         def change(manifest, _run):

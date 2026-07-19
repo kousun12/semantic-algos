@@ -40,6 +40,17 @@ Invoke a fresh producer with only this explicit root and the repository skill.
   timestamped snapshot that must be regenerated after source changes.
 - All three applications and all 13 source files remain inspectable.
 
+## Manifest-only structural provenance
+
+Before opening referenced Markdown, the fixed consumer must derive
+Running/`snapshot: true` from `run`; all three local mappings, operators, and
+statuses from `nodes`; accepted versus unfulfilled relationships from `edges`;
+the empty current return from `presentation.resultNodeIds`; and the exact
+artifact/finalizer absence from `artifacts`. Warnings and notes may carry the
+regeneration caveat. Markdown may provide displayed result/status prose or be
+used by an independent verifier after reconstruction, but it may not fill in
+operators, statuses, applications, flow, return state, or absent finalization.
+
 ## Degrees of freedom
 
 The producer may feature the completed, running, and pending nodes together or
@@ -62,7 +73,8 @@ prose, and optional source/stage nodes are not golden.
 ## Fixed-consumer checks
 
 Give a fresh consumer only the canonical bundle and its referenced artifacts.
-It must recover Running/snapshot, the three local operator identities, the
+From manifest fields before artifact reads, it must recover Running/snapshot,
+the three local operator identities, the
 statuses Succeeded/Running/Pending, accepted value only for 001, no current
 returns, no finalizer artifacts, and the regeneration caveat. It must
 enumerate all 13 source artifacts and locate each application prompt/status

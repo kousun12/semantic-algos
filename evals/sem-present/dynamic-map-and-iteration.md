@@ -43,6 +43,20 @@ Invoke one fresh producer using only this raw run and the repository
 - Application 009 is the only returned result; every one of 36 source files is
   inventoried.
 
+## Manifest-only structural provenance
+
+Before opening any referenced Markdown, the fixed consumer must reconstruct
+all structural facts from manifest fields alone: the nine application
+identities/operators/statuses from `nodes[].application` and `nodes[].status`;
+map, round, and choice membership/order from `groups[].memberNodeIds` and node
+ordinals; accepted input/value flow and semantic stop/selection relationships
+from `edges`; the sole ordered return from `presentation.resultNodeIds`; and
+the exact source inventory from `artifacts[].path` and roles. Referenced
+Markdown may supply displayed accepted-result content (including `false`,
+`true`, and `short`) or let an independent verifier compare the reconstruction
+with the raw trace, but it may not supply or repair applications, edges,
+statuses, grouping/order, branch materialization, or return structure.
+
 ## Degrees of freedom
 
 `map`, `iteration`, and `choice` groups are useful but their exact nesting,
@@ -69,7 +83,8 @@ never be replaced by a group.
 ## Fixed-consumer checks
 
 A fresh fixed consumer receives only the bundle and referenced source
-artifacts. It must enumerate nine actual applications; recover the three item
+artifacts. From the manifest before artifact reads, it must enumerate nine
+actual applications; recover the three item
 order, two round order, predicate outcomes, semantic stop, selector result,
 absence of the long branch, Succeeded status, sole returned 009 result, and
 all 36 inventory paths. It may not parse `program.md` to invent missing graph

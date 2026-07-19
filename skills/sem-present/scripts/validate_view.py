@@ -26,6 +26,8 @@ STATUSES = {
     "unknown", "pending", "ready", "running", "succeeded", "failed",
     "blocked", "partial",
 }
+NONTERMINAL_STATUSES = {"unknown", "pending", "ready", "running"}
+TERMINAL_STATUSES = {"succeeded", "failed", "blocked", "partial"}
 ARTIFACT_ROLES = {
     "request", "compiler-prompt", "program", "compile-notes",
     "interpretation", "run-log", "input", "application-prompt",
@@ -290,10 +292,19 @@ class Validator:
         self._required(obj, ("title", "status", "snapshot"), "manifest.run")
         if "title" in obj:
             self._string(obj["title"], "manifest.run.title", nonempty=True)
-        if "status" in obj:
+        status = (
             self._enum(obj["status"], STATUSES, "manifest.run.status")
-        if "snapshot" in obj:
+            if "status" in obj else None
+        )
+        snapshot = (
             self._boolean(obj["snapshot"], "manifest.run.snapshot")
+            if "snapshot" in obj else None
+        )
+        if status is not None and snapshot is not None:
+            expected = NONTERMINAL_STATUSES if snapshot else TERMINAL_STATUSES
+            if status not in expected:
+                state = "non-terminal" if snapshot else "terminal"
+                self.error("manifest.run", f"snapshot {snapshot!r} requires a {state} status")
 
     def _validate_artifact(self, value: Any, location: str) -> None:
         obj = self._object(value, location)
@@ -341,8 +352,11 @@ class Validator:
             for index, panel in enumerate(panels):
                 self._validate_panel(panel, f"{location}.panels[{index}]")
             self._unique_ids(panels, f"{location}.panels")
-        if node_type == "application" and "application" not in obj:
-            self.error(f"{location}.application", "required for an application node")
+        if node_type == "application":
+            if "application" not in obj:
+                self.error(f"{location}.application", "required for an application node")
+            if "status" not in obj:
+                self.error(f"{location}.status", "required for an application node")
         if "application" in obj:
             self._validate_application(obj["application"], f"{location}.application")
 
@@ -574,6 +588,7 @@ class Validator:
                     for index, identifier in enumerate(identifiers):
                         if isinstance(identifier, str) and identifier not in nodes:
                             self.error(f"manifest.presentation.{field}[{index}]", f"unknown node ID {identifier!r}")
+            self._validate_presentation_results(presentation, nodes, artifacts)
         for index, warning in enumerate(warning_records):
             for field, known, noun in (("nodeIds", nodes, "node"), ("artifactIds", artifacts, "artifact")):
                 identifiers = warning.get(field)
@@ -623,24 +638,77 @@ class Validator:
             for group in groups
             if isinstance(group.get("id"), str) and isinstance(group.get("parentGroupId"), str)
         }
-        state: dict[str, int] = {}
-
-        def visit(group_id: str, trail: list[str]) -> None:
-            if state.get(group_id) == 2:
-                return
-            if state.get(group_id) == 1:
-                cycle = trail[trail.index(group_id):] + [group_id]
-                self.error("manifest.groups", f"parentGroupId cycle: {' -> '.join(cycle)}")
-                return
-            state[group_id] = 1
-            parent = parents.get(group_id)
-            if parent in parents or parent in state:
-                visit(parent, trail + [group_id])
-            state[group_id] = 2
-
+        complete: set[str] = set()
         for identifier in parents:
-            if state.get(identifier) is None:
-                visit(identifier, [])
+            if identifier in complete:
+                continue
+            trail: list[str] = []
+            positions: dict[str, int] = {}
+            current = identifier
+            while current in parents and current not in complete:
+                if current in positions:
+                    cycle = trail[positions[current]:] + [current]
+                    self.error("manifest.groups", f"parentGroupId cycle: {' -> '.join(cycle)}")
+                    break
+                positions[current] = len(trail)
+                trail.append(current)
+                current = parents[current]
+            complete.update(trail)
+
+    def _validate_presentation_results(
+        self,
+        presentation: dict[str, Any],
+        nodes: dict[str, dict[str, Any]],
+        artifacts: dict[str, dict[str, Any]],
+    ) -> None:
+        result_ids = presentation.get("resultNodeIds")
+        if not isinstance(result_ids, list):
+            return
+        for index, identifier in enumerate(result_ids):
+            if not isinstance(identifier, str):
+                continue
+            node = nodes.get(identifier)
+            if node is None:
+                continue
+            location = f"manifest.presentation.resultNodeIds[{index}]"
+            node_type = node.get("type")
+            if node_type not in {"application", "result"}:
+                self.error(location, "returned node must have type 'application' or 'result'")
+                continue
+            application = node.get("application")
+            directory = application.get("directory") if isinstance(application, dict) else None
+            expected_path = f"{directory}/result.md" if isinstance(directory, str) else None
+            exposes_result = False
+            panels = node.get("panels")
+            if isinstance(panels, list):
+                for panel in panels:
+                    if not isinstance(panel, dict) or panel.get("role") != "result":
+                        continue
+                    artifact = artifacts.get(panel.get("artifactId"))
+                    if not isinstance(artifact, dict):
+                        continue
+                    path = artifact.get("path")
+                    role = artifact.get("role")
+                    parts = PurePosixPath(path).parts if isinstance(path, str) else ()
+                    canonical_application = (
+                        role == "application-result"
+                        and len(parts) == 3
+                        and parts[0] == "applications"
+                        and parts[2] == "result.md"
+                    )
+                    canonical_final = role == "final" and path == "final.md"
+                    if node_type == "application" and path == expected_path:
+                        exposes_result = True
+                        break
+                    if node_type == "result" and (canonical_application or canonical_final):
+                        exposes_result = True
+                        break
+            if not exposes_result:
+                noun = "application" if node_type == "application" else "result node"
+                self.error(
+                    location,
+                    f"returned {noun} must expose canonical accepted content in a result panel",
+                )
 
     def _safe_relative_path(self, value: str, location: str) -> PurePosixPath | None:
         if not value or value.startswith("/") or value.endswith("/"):
@@ -822,8 +890,11 @@ class Validator:
             has_result = canonical_result in artifact_paths
             if status == "succeeded" and not has_result:
                 self.error(f"manifest.nodes[{index}].status", f"succeeded application has no canonical {canonical_result}")
-            if has_result and isinstance(status, str) and status != "succeeded":
-                self.error(f"manifest.nodes[{index}].status", "application with a canonical result.md must have status 'succeeded'")
+            if has_result and status != "succeeded":
+                self.error(
+                    f"manifest.nodes[{index}].status",
+                    "application with a canonical result.md must have status 'succeeded'",
+                )
 
         for directory in sorted(expected - set(mapped)):
             self.error(directory, "runtime application directory has no application node")

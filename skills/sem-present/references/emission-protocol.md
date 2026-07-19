@@ -43,16 +43,19 @@ target changes or becomes unavailable during resolution.
 
 Inspect `view/` before writing. Create it only as a real directory directly
 under the resolved run root. Refuse a symlinked, non-directory, or
-outside-resolving `view/`. Treat existing candidate names as producer-owned,
-but refuse to overwrite them when either resolves through a symlink or is not
-a regular file. Leave every other existing file under `view/` alone.
+outside-resolving `view/`. Treat only uniquely named candidates created by the
+current invocation as producer-owned. Never overwrite an existing candidate;
+choose another generation ID instead, and leave every other existing file
+under `view/` alone.
 
-For an apparently active run, record source paths, resolved identities, file
-types, sizes, and modification times before and after the read. If files are
-appearing, disappearing, or changing while the projection is being
+For every run state, fingerprint the complete eligible source inventory before
+and after the read. Include the path set, lexical and resolved identities, file
+types, sizes, modification times, and a content digest (or retained exact
+bytes) for every non-view authoritative source file. If files are appearing,
+disappearing, retargeted, or changing while the projection is being
 reconstructed, stop without promotion and ask the caller to retry when the run
-is quiescent. A snapshot is a stable observation of an unfinished run, not a
-live or torn read.
+is quiescent. This applies to terminal runs as well as active ones: a snapshot
+is a stable observation of an unfinished run, not a live or torn read.
 
 ## Inventory before interpretation
 
@@ -189,23 +192,32 @@ names.
 Populate `presentation.resultNodeIds` in the declared return order. Include
 only established returned artifacts. Do not substitute execution order or the
 order in `final.md` when stronger runtime evidence disagrees. Use an empty
-result list when a non-successful trace establishes no return. A succeeded run
-must expose at least one result node or generation must fail.
+result list when a non-successful trace establishes no return. Each returned
+node is an application or explicit result identity. A returned application
+must expose its own canonical accepted `result.md` in a result panel; use an
+explicit result node for an established structural value, collection, or final
+document, and give it one or more result panels for the canonical accepted
+application results or `final.md` that it represents. A succeeded run must
+expose at least one result node or generation must fail.
 
 ## Write candidates
 
-Create a generation timestamp in RFC 3339 form with a UTC offset. Recheck that
-`view/` and both candidate targets remain safe. Write complete candidates only
-to:
+Create a generation timestamp in RFC 3339 form with a UTC offset and a fresh,
+collision-resistant generation ID. Recheck that `view/` and both candidate
+targets remain safe. Pair the candidates with that same ID and write complete
+candidates only to names of this form:
 
 ```text
-view/manifest.next.json
-view/notes.next.md
+view/manifest.<generation-id>.next.json
+view/notes.<generation-id>.next.md
 ```
 
-Write no temporary material outside `view/`. Include all required manifest
-fields even when arrays are empty. Keep extensions inert, namespaced, and
-optional. Do not copy substantive source content into JSON.
+Never reuse a fixed shared candidate name, and never mix IDs across a pair.
+Retain the exact candidate paths and their file identities for the remainder
+of the invocation. If either name already exists, choose a new generation ID;
+do not overwrite it. Write no temporary material outside `view/`. Include all
+required manifest fields even when arrays are empty. Keep extensions inert,
+namespaced, and optional. Do not copy substantive source content into JSON.
 
 Make candidate notes contain:
 
@@ -219,8 +231,8 @@ Make candidate notes contain:
 7. an explicit regeneration/staleness warning for a snapshot.
 
 Record auditable decisions and evidence, not private reasoning. Initially mark
-validation pending; after success, update `notes.next.md` to state success
-before promotion.
+validation pending; after success, update the paired candidate notes to state
+success before promotion.
 
 ## Validate and repair
 
@@ -228,7 +240,7 @@ Resolve the installed skill directory and invoke its bundled standard-library
 validator with arguments, not a constructed shell fragment:
 
 ```text
-python3 <sem-present-skill>/scripts/validate_view.py <resolved-run-root> view/manifest.next.json
+python3 <sem-present-skill>/scripts/validate_view.py <resolved-run-root> view/manifest.<generation-id>.next.json
 ```
 
 The candidate argument is relative to the run root. Do not add packages,
@@ -245,16 +257,33 @@ reconciliation, rebuild the affected candidate records, and validate again.
 Do not keep remapping semantics until a candidate happens to pass. If it still
 fails, stop, preserve the candidates for inspection, and do not promote.
 
-After validation succeeds, recompare the source path inventory and
-application-directory set with both the initial inventory and manifest. For a
-snapshot, also confirm immediately before promotion that the recorded source
-paths, resolved identities, file types, sizes, and modification times still
-match the stable post-read observation. Any mismatch invalidates the candidate
-and requires a new quiescent run, not a late patch.
+After validation succeeds, update the paired notes with that exact command and
+outcome. Validate the final notes candidate as UTF-8 Markdown and check its
+required audit items against this protocol. Read both final candidates, retain
+their exact bytes and content digests, and record their resolved identities.
+
+Immediately before promotion, rerun the validator against that exact manifest
+candidate and repeat the notes validation. Confirm that both candidate paths,
+resolved identities, and bytes still match the validated pair. Recompare the
+source and application-directory path sets with the initial inventories and
+manifest, then repeat the full source fingerprint check (identities, types,
+sizes, modification times, and content) for every run state. For an active
+snapshot, repeat that source fingerprint check once more immediately, with no
+source read, candidate rewrite, or other substantive work between the check
+and promotion. Any source or candidate mismatch invalidates the pair and
+requires a new quiescent invocation, not a late patch.
 
 ## Promote with a commit point
 
-Promote only a validated candidate whose notes record the successful command.
+Promote only the exact validated candidate pair whose notes record the
+successful command. Before changing a canonical path, acquire a cooperative
+promotion guard by atomically creating a producer-owned real directory such
+as `view/.sem-present-promote.lock`; refuse promotion while one already exists.
+Record the guard's identity and remove it only if it is still the directory
+created by this invocation. A stale or unsafe guard requires manual inspection,
+not forced deletion. This guard serializes cooperating producers but is not a
+security boundary or a promise of host-level isolation.
+
 Use same-directory atomic file replacement primitives; do not stream new bytes
 directly into canonical files. Treat replacement of `manifest.json` as the
 commit point because consumers open it first.
@@ -270,21 +299,29 @@ Before replacement:
    under `view/`, without overwriting another file;
 5. verify the backups before changing a canonical path.
 
-Then atomically replace `notes.md` with `notes.next.md`, followed immediately
-by atomically replacing `manifest.json` with `manifest.next.json`. If either
-replacement fails, restore every prior canonical file from its verified backup
-using the same atomic primitive. If no prior file existed, remove only the new
-canonical file created by this failed promotion. Report failure and retain or
-restore the candidates when practical. Never leave a known-valid prior
-manifest paired with partially promoted notes.
+While holding the promotion guard, repeat the candidate identity/byte checks
+and the appropriate final source quiescence check. Then atomically replace
+`notes.md` with the uniquely paired notes candidate, followed immediately by
+atomically replacing `manifest.json` with its same-ID manifest candidate. If
+either replacement fails, restore every prior canonical file from its verified
+backup using the same atomic primitive. If no prior file existed, remove only
+the new canonical file created by this failed promotion. Report failure and
+retain or restore the candidates when practical. Never leave a known-valid
+prior manifest paired with partially promoted notes.
 
 After the manifest commit point succeeds, verify the canonical pair exists,
-the canonical validator succeeds, and the manifest bytes match the validated
-candidate bytes retained in memory or backup. If this post-check fails, restore
-every prior canonical file; if no prior canonical file existed, remove only
-the newly promoted canonical file. Report the failure. Remove only
-producer-created backup/candidate files after a verified success. Leave all
-unrecognized `view/` files untouched.
+the canonical validator succeeds, and both canonical files match the retained
+bytes and digests of the exact validated candidate pair. If this post-check
+fails, restore every prior canonical file; if no prior canonical file existed,
+remove only the newly promoted canonical file. Report the failure. After a
+verified success, remove only this invocation's verified backups and
+candidates. Leave all unrecognized `view/` files untouched.
+
+After completing the canonical post-check and any necessary rollback, release
+the promotion guard on every controlled exit, but only after verifying that it
+is still the guard created by this invocation. If ownership cannot be verified,
+leave it in place and report the manual cleanup requirement. A process crash
+may likewise leave a stale guard for explicit inspection.
 
 This is a two-file commit protocol built from per-file atomic replacement and
 rollback; do not claim the filesystem provides one atomic transaction for the

@@ -120,6 +120,56 @@
           "type": "boolean"
         }
       },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "snapshot": {
+                "const": true
+              }
+            },
+            "required": [
+              "snapshot"
+            ]
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "unknown",
+                  "pending",
+                  "ready",
+                  "running"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "snapshot": {
+                "const": false
+              }
+            },
+            "required": [
+              "snapshot"
+            ]
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "succeeded",
+                  "failed",
+                  "blocked",
+                  "partial"
+                ]
+              }
+            }
+          }
+        }
+      ],
       "additionalProperties": true
     },
     "artifact": {
@@ -382,7 +432,8 @@
           },
           "then": {
             "required": [
-              "application"
+              "application",
+              "status"
             ]
           }
         }

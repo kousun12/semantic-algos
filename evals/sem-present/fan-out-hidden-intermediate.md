@@ -39,6 +39,18 @@ Invoke a fresh producer with only the explicit run root and the repository
 - All three applications and all 17 source files are represented exactly
   once.
 
+## Manifest-only structural provenance
+
+Before opening referenced Markdown, the fixed consumer must derive the three
+application mappings/operators/statuses and hidden emphasis from `nodes`, the
+shared upstream and independent branch flow from `edges`, fan-out membership
+and order (when represented as a group) from `groups`, `[003, 002]` from
+`presentation.resultNodeIds`, and the 17-path inventory from `artifacts`.
+Markdown may provide displayed request/result bodies or serve as independent
+verification evidence after reconstruction; it may not be parsed to infer or
+repair application identity, flow, visibility, status, grouping, or return
+order.
+
 ## Degrees of freedom
 
 The producer may use a `fan-out` group or communicate independence with edges
@@ -58,7 +70,8 @@ are non-golden. The fixed base vocabulary and material facts are not.
 ## Fixed-consumer checks
 
 With only the emitted bundle and its referenced artifacts, a fresh consumer
-must recover three application directories, the single shared accepted input,
+must first recover from manifest fields three application directories, the
+single shared accepted input,
 the two independent branch relationships, the hidden-but-inspectable status
 of 001, Succeeded terminal status, and result order `[003, 002]`. It must also
 locate every prompt, result, status, and run-level document through panels or

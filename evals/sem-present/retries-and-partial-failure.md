@@ -40,6 +40,18 @@ conclusions.
 - Overall status is Partial and returns are `[002, 001]`; all 20 sources are
   inventoried.
 
+## Manifest-only structural provenance
+
+Before opening referenced Markdown, the fixed consumer must derive Partial
+terminal state from `run`; all four application mappings/operators/statuses
+from `nodes`; accepted, retry, independent, and unfulfilled-control structure
+from `edges` and optional `groups`; `[002, 001]` from
+`presentation.resultNodeIds`; and canonical result versus attempt identities
+from artifact roles and result/attempt panels. Markdown may supply displayed
+attempt or result bodies or support an independent raw-trace comparison after
+reconstruction; it may not determine applications, statuses, value/control
+flow, grouping/order, acceptedness, or returns.
+
 ## Degrees of freedom
 
 Attempts may be secondary panels, event nodes, a retry group, retry edges, or
@@ -59,8 +71,9 @@ and optional group spellings are not golden.
 
 ## Fixed-consumer checks
 
-Using only the bundle and referenced artifacts, a fresh consumer must recover
-four applications and their statuses, two recovery attempts with only the
+Using only the bundle and referenced artifacts, a fresh consumer must first
+recover from manifest fields four applications and their statuses, two
+recovery attempts with only the
 second accepted, the independent successful notice, the critic's terminal
 semantic failure, the synthesis's unlaunched blocked state, Partial status,
 and result order `[002, 001]`. It must locate all prompts, statuses, accepted
