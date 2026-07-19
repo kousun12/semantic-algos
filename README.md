@@ -145,10 +145,11 @@ Choose a procedure that matches the shape of the question. A weighted matrix is 
 
 The semantic skills under `skills/*` are Sem's standard library. Each skill's
 `SKILL.md` is its function contract: it defines when the operator fits, the
-procedure it follows, its output form, stopping rule, and guardrails. The two
-language tools, [`sem-compile`](skills/sem-compile) and
-[`sem-run`](skills/sem-run), live in the same collection but orchestrate the
-library rather than acting as ordinary semantic functions inside a program.
+procedure it follows, its output form, stopping rule, and guardrails. The three
+language tools—[`sem-compile`](skills/sem-compile),
+[`sem-run`](skills/sem-run), and [`sem-present`](skills/sem-present)—live in
+the same collection but operate around the library rather than acting as
+ordinary semantic functions inside a program.
 
 ### Causes and premises
 
@@ -193,6 +194,7 @@ library rather than acting as ordinary semantic functions inside a program.
 | --- | --- |
 | [`sem-compile`](skills/sem-compile) | Compile natural language, a loose pipeline, or an existing `program.md` into a readable Sem program and compile notes, without running or answering it. |
 | [`sem-run`](skills/sem-run) | Compile when needed, interpret the program, run every semantic application in a fresh subagent, and return a linked Markdown trace. |
+| [`sem-present`](skills/sem-present) | Project one explicitly named existing Sem run into a validated, render-ready view bundle without executing, resuming, or rendering it. |
 
 For compile-only work, invoke the compiler directly:
 
@@ -203,6 +205,44 @@ $sem-compile Find the real question in why I keep volunteering for work I resent
 `sem-compile` writes `request.md`, `program.md`, and `compile-notes.md` under a
 collision-safe `sem-programs/<title>/<timestamp>/` bundle and stops. It does
 not execute the program or answer the request.
+
+To prepare an existing run for a future renderer, invoke `sem-present` with
+the explicit run directory rather than a title, glob, or “latest” lookup:
+
+```text
+$sem-present sem-runs/meaning-and-work/2026-07-19-1530/
+```
+
+After reconstructing what actually happened and validating the projection,
+`sem-present` adds two files inside that run:
+
+```text
+sem-runs/meaning-and-work/2026-07-19-1530/
+  ...authoritative Markdown trace...
+  view/
+    manifest.json
+    notes.md
+```
+
+The Markdown trace remains authoritative. The `view/` directory is a
+disposable, regenerable projection: deleting or rebuilding it does not change
+the run, and `sem-run` never reads its JSON to execute or resume work.
+
+A future consumer has a deliberately fixed loading algorithm. Starting from
+the run root, it opens `view/manifest.json`, requires `kind` to be
+`sem-run-view`, accepts only a supported `schemaVersion` major, validates the
+required envelope and base vocabularies, and resolves every artifact path
+relative to the run root with containment checks. It then renders the declared
+nodes, edges, groups, presentation roots, and panels with a fixed base
+vocabulary. Unknown optional data falls back to sanitized Markdown, plain
+text, or a direct artifact link. The consumer does not parse Sem, scrape the
+runtime Markdown for relationships, or ask a model to reconstruct the run.
+
+That consumer and its UI are separate future work; this repository does not
+currently include a React renderer, graph canvas, layout engine, live watcher,
+or graph-library configuration. Presentation-agent labels, summaries,
+groupings, and graph aesthetics may vary while still satisfying the validated
+[bundle contract](skills/sem-present/references/view-bundle-contract.md).
 
 ## Composition
 

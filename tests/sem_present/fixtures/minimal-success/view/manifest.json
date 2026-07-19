@@ -1,0 +1,33 @@
+{
+  "kind": "sem-run-view",
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-19T15:30:00Z",
+  "run": {"title": "Minimal success", "status": "succeeded", "snapshot": false},
+  "artifacts": [
+    {"id": "a-request", "path": "request.md", "mediaType": "text/markdown", "role": "request", "title": "Request", "ownerNodeId": "n-request"},
+    {"id": "a-program", "path": "program.md", "mediaType": "text/markdown", "role": "program", "title": "Program", "ownerNodeId": "n-request"},
+    {"id": "a-notes", "path": "compile-notes.md", "mediaType": "text/markdown", "role": "compile-notes", "title": "Compile notes"},
+    {"id": "a-interpretation", "path": "interpretation.md", "mediaType": "text/markdown", "role": "interpretation", "title": "Interpretation"},
+    {"id": "a-run", "path": "run.md", "mediaType": "text/markdown", "role": "run-log", "title": "Run log"},
+    {"id": "a-prompt", "path": "applications/001-answer/prompt.md", "mediaType": "text/markdown", "role": "application-prompt", "title": "Prompt", "ownerNodeId": "n-answer"},
+    {"id": "a-result", "path": "applications/001-answer/result.md", "mediaType": "text/markdown", "role": "application-result", "title": "Result", "ownerNodeId": "n-answer"},
+    {"id": "a-status", "path": "applications/001-answer/status.md", "mediaType": "text/markdown", "role": "application-status", "title": "Status", "ownerNodeId": "n-answer"},
+    {"id": "a-final", "path": "final.md", "mediaType": "text/markdown", "role": "final", "title": "Final"}
+  ],
+  "nodes": [
+    {"id": "n-request", "type": "source", "title": "Request", "emphasis": "context", "panels": [
+      {"id": "request", "label": "Request", "artifactId": "a-request", "role": "primary", "renderAs": "markdown"},
+      {"id": "program", "label": "Program", "artifactId": "a-program", "role": "source", "renderAs": "code"}
+    ]},
+    {"id": "n-answer", "type": "application", "title": "Answer", "status": "succeeded", "emphasis": "primary", "application": {"directory": "applications/001-answer", "operator": {"kind": "local", "name": "answer"}}, "panels": [
+      {"id": "result", "label": "Result", "artifactId": "a-result", "role": "result", "renderAs": "markdown", "selector": {"kind": "markdown-heading", "heading": "Result"}},
+      {"id": "prompt", "label": "Prompt", "artifactId": "a-prompt", "role": "prompt", "renderAs": "markdown"},
+      {"id": "status", "label": "Status", "artifactId": "a-status", "role": "status", "renderAs": "metadata"}
+    ]}
+  ],
+  "edges": [{"id": "e-request-answer", "from": "n-request", "to": "n-answer", "type": "value"}],
+  "groups": [],
+  "presentation": {"entryNodeIds": ["n-request"], "featuredNodeIds": ["n-answer"], "resultNodeIds": ["n-answer"]},
+  "warnings": [],
+  "extensions": {}
+}
