@@ -695,7 +695,7 @@ or whether an optional stage deserves its own node does not.
 
 ## Phase 3: Implement `sem-present`
 
-- **Status:** Not started
+- **Status:** Done
 - **Depends on:** Phase 2
 - **Objective:** Deliver the skill that reconstructs an actual Sem run into a
   faithful, validated, render-ready view bundle without modifying its trace.
@@ -891,4 +891,39 @@ any future UI can render that vocabulary without having to understand Sem.
 - **Deviations:** None; the Phase 1 contract and schema required no changes.
 - **Downstream:** Phase 3 can validate `view/manifest.next.json` before safely
   promoting a candidate bundle.
+- **Remaining risks / manual checks:** None.
+
+### 2026-07-19 — Phase 3: Implement `sem-present`
+
+- **Status:** Done
+- **Workers:** initial implementer `/root/phase3_implement` (interrupted before
+  edits by a user status message); replacement implementer
+  `/root/phase3_implement_retry`; forward-test worker
+  `/root/phase3_implement_retry/sem_present_forward`; reviewer
+  `/root/phase3_review` (GPT-5.6-sol, high effort).
+- **Summary:** Completed the concise `sem-present` skill and detailed emission
+  protocol for explicit run dispatch, source precedence, whole-run
+  reconstruction, safe panels and graph choices, candidate validation,
+  bounded repair, rollback-capable canonical promotion, regeneration,
+  snapshots, untrusted content, and final reporting.
+- **Validation:** The 44-test validator suite and both fixture CLIs passed;
+  standard skill validation, metadata/link checks, placeholder scan, and
+  `git diff --check` passed. Isolated workflow exercises produced and
+  validated a 9-artifact/1-application success, a 14-artifact/3-application
+  fan-out with B-before-A return order, and a 6-artifact/1-application active
+  snapshot. Candidate and post-promotion validation passed; an invalid
+  candidate preserved prior canonical manifest and notes byte-for-byte.
+- **Review:** Required directoryless runtime-established pending/blocked
+  identities to use schema-compatible non-application nodes and strengthened
+  the immediate pre-promotion snapshot quiescence check. No unresolved
+  findings remain.
+- **Implementation commit:** `4ff6c95` (`Implement sem-present emission
+  workflow`).
+- **Deviations:** The interrupted first implementer was replaced before it made
+  changes. One replacement-worker test directory was accidentally created at
+  the repository root, then moved to Trash after confirming it was
+  worker-created; user-owned `sem-runs/` remained untouched. No product or
+  plan deviation.
+- **Downstream:** Phase 4 can invoke the completed emission protocol in fresh
+  contexts for reconstruction evaluations.
 - **Remaining risks / manual checks:** None.
