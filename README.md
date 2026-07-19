@@ -15,7 +15,7 @@ repeatable; its execution requires judgment. That is what we mean by a
 **semantic algorithm**.
 
 You can invoke a skill on its own, but the larger design is for modern agent
-harnesses such as Codex, Claude Code, pi, and Cursor—any host that can launch
+harnesses such as [Zo](https://www.zo.computer/), Codex, Claude Code, pi, and Cursor—any host that can launch
 fresh subagents without inherited context. In those environments, `sem-run`
 acts as a meta-program: it turns a request into an inspectable computation
 graph, lets the harness orchestrate one subagent per semantic operation, and
