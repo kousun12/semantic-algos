@@ -1,0 +1,26 @@
+{
+  "kind": "sem-run-view",
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-19T15:35:00Z",
+  "run": {"title": "Active partial", "status": "running", "snapshot": true},
+  "artifacts": [
+    {"id": "a-request", "path": "request.md", "mediaType": "text/markdown", "role": "request", "title": "Request", "ownerNodeId": "n-request"},
+    {"id": "a-program", "path": "program.md", "mediaType": "text/markdown", "role": "program", "title": "Program", "ownerNodeId": "n-request"},
+    {"id": "a-interpretation", "path": "interpretation.md", "mediaType": "text/markdown", "role": "interpretation", "title": "Interpretation"},
+    {"id": "a-run", "path": "run.md", "mediaType": "text/markdown", "role": "run-log", "title": "Run log"},
+    {"id": "a-prompt", "path": "applications/001-pending/prompt.md", "mediaType": "text/markdown", "role": "application-prompt", "title": "Prompt", "ownerNodeId": "n-pending"},
+    {"id": "a-status", "path": "applications/001-pending/status.md", "mediaType": "text/markdown", "role": "application-status", "title": "Status", "ownerNodeId": "n-pending"}
+  ],
+  "nodes": [
+    {"id": "n-request", "type": "source", "title": "Request", "emphasis": "context", "panels": [{"id": "request", "label": "Request", "artifactId": "a-request", "role": "primary", "renderAs": "markdown"}]},
+    {"id": "n-pending", "type": "application", "title": "Pending", "status": "running", "emphasis": "primary", "application": {"directory": "applications/001-pending"}, "panels": [
+      {"id": "prompt", "label": "Prompt", "artifactId": "a-prompt", "role": "prompt", "renderAs": "markdown"},
+      {"id": "status", "label": "Status", "artifactId": "a-status", "role": "status", "renderAs": "metadata"}
+    ]}
+  ],
+  "edges": [{"id": "e-request-pending", "from": "n-request", "to": "n-pending", "type": "value"}],
+  "groups": [],
+  "presentation": {"entryNodeIds": ["n-request"], "featuredNodeIds": ["n-pending"], "resultNodeIds": []},
+  "warnings": [{"code": "active-snapshot", "message": "Regenerate after the run changes.", "severity": "warning", "nodeIds": ["n-pending"]}],
+  "extensions": {}
+}
