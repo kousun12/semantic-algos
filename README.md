@@ -92,6 +92,13 @@ Open `final.md` for the returned allegory and a complete linked trace of how it
 was produced. Because the state lives in files, a run can also be inspected or
 resumed without relying on conversational memory.
 
+## Examples
+
+The [`examples/`](examples/) directory contains complete, browsable Sem runs.
+Start with [KJV Essential Structure: Twelve
+Parables](examples/kjv-essential-parables/), a successful 39-application run
+that also includes the optional `sem-present` view projection.
+
 ## Use a single skill
 
 Invoke a skill by name and give it a question. The best inputs often sound almost too simple to need a method:
