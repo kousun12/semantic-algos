@@ -1,0 +1,4483 @@
+{
+  "kind": "sem-run-view",
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-08-01T13:16:41-04:00",
+  "run": {
+    "title": "KJV Essential Structure: Twelve Parables",
+    "status": "succeeded",
+    "snapshot": false
+  },
+  "artifacts": [
+    {
+      "id": "art-001",
+      "path": "applications/001-deterministic-draw/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "001-deterministic-draw prompt",
+      "ownerNodeId": "app-001"
+    },
+    {
+      "id": "art-002",
+      "path": "applications/001-deterministic-draw/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "001-deterministic-draw result",
+      "ownerNodeId": "app-001"
+    },
+    {
+      "id": "art-003",
+      "path": "applications/001-deterministic-draw/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "001-deterministic-draw status",
+      "ownerNodeId": "app-001"
+    },
+    {
+      "id": "art-004",
+      "path": "applications/002-blend-craft-mechanisms/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "002-blend-craft-mechanisms prompt",
+      "ownerNodeId": "app-002"
+    },
+    {
+      "id": "art-005",
+      "path": "applications/002-blend-craft-mechanisms/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "002-blend-craft-mechanisms result",
+      "ownerNodeId": "app-002"
+    },
+    {
+      "id": "art-006",
+      "path": "applications/002-blend-craft-mechanisms/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "002-blend-craft-mechanisms status",
+      "ownerNodeId": "app-002"
+    },
+    {
+      "id": "art-007",
+      "path": "applications/003-build-major-minor-outline/attempts/001-failure.md",
+      "mediaType": "text/markdown",
+      "role": "attempt",
+      "title": "003-build-major-minor-outline retry 001-failure",
+      "ownerNodeId": "event-outline-attempt-1"
+    },
+    {
+      "id": "art-008",
+      "path": "applications/003-build-major-minor-outline/attempts/002-prompt.md",
+      "mediaType": "text/markdown",
+      "role": "attempt",
+      "title": "003-build-major-minor-outline retry 002-prompt",
+      "ownerNodeId": "event-outline-attempt-1"
+    },
+    {
+      "id": "art-009",
+      "path": "applications/003-build-major-minor-outline/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "003-build-major-minor-outline prompt",
+      "ownerNodeId": "app-003"
+    },
+    {
+      "id": "art-010",
+      "path": "applications/003-build-major-minor-outline/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "003-build-major-minor-outline result",
+      "ownerNodeId": "app-003"
+    },
+    {
+      "id": "art-011",
+      "path": "applications/003-build-major-minor-outline/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "003-build-major-minor-outline status",
+      "ownerNodeId": "app-003"
+    },
+    {
+      "id": "art-012",
+      "path": "applications/004-leaf-1-1-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "004-leaf-1-1-heart prompt",
+      "ownerNodeId": "app-004"
+    },
+    {
+      "id": "art-013",
+      "path": "applications/004-leaf-1-1-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "004-leaf-1-1-heart result",
+      "ownerNodeId": "app-004"
+    },
+    {
+      "id": "art-014",
+      "path": "applications/004-leaf-1-1-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "004-leaf-1-1-heart status",
+      "ownerNodeId": "app-004"
+    },
+    {
+      "id": "art-015",
+      "path": "applications/005-leaf-1-1-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "005-leaf-1-1-forge prompt",
+      "ownerNodeId": "app-005"
+    },
+    {
+      "id": "art-016",
+      "path": "applications/005-leaf-1-1-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "005-leaf-1-1-forge result",
+      "ownerNodeId": "app-005"
+    },
+    {
+      "id": "art-017",
+      "path": "applications/005-leaf-1-1-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "005-leaf-1-1-forge status",
+      "ownerNodeId": "app-005"
+    },
+    {
+      "id": "art-018",
+      "path": "applications/006-leaf-1-1-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "006-leaf-1-1-parable prompt",
+      "ownerNodeId": "app-006"
+    },
+    {
+      "id": "art-019",
+      "path": "applications/006-leaf-1-1-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "006-leaf-1-1-parable result",
+      "ownerNodeId": "app-006"
+    },
+    {
+      "id": "art-020",
+      "path": "applications/006-leaf-1-1-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "006-leaf-1-1-parable status",
+      "ownerNodeId": "app-006"
+    },
+    {
+      "id": "art-021",
+      "path": "applications/007-leaf-1-2-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "007-leaf-1-2-heart prompt",
+      "ownerNodeId": "app-007"
+    },
+    {
+      "id": "art-022",
+      "path": "applications/007-leaf-1-2-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "007-leaf-1-2-heart result",
+      "ownerNodeId": "app-007"
+    },
+    {
+      "id": "art-023",
+      "path": "applications/007-leaf-1-2-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "007-leaf-1-2-heart status",
+      "ownerNodeId": "app-007"
+    },
+    {
+      "id": "art-024",
+      "path": "applications/008-leaf-1-2-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "008-leaf-1-2-forge prompt",
+      "ownerNodeId": "app-008"
+    },
+    {
+      "id": "art-025",
+      "path": "applications/008-leaf-1-2-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "008-leaf-1-2-forge result",
+      "ownerNodeId": "app-008"
+    },
+    {
+      "id": "art-026",
+      "path": "applications/008-leaf-1-2-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "008-leaf-1-2-forge status",
+      "ownerNodeId": "app-008"
+    },
+    {
+      "id": "art-027",
+      "path": "applications/009-leaf-1-2-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "009-leaf-1-2-parable prompt",
+      "ownerNodeId": "app-009"
+    },
+    {
+      "id": "art-028",
+      "path": "applications/009-leaf-1-2-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "009-leaf-1-2-parable result",
+      "ownerNodeId": "app-009"
+    },
+    {
+      "id": "art-029",
+      "path": "applications/009-leaf-1-2-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "009-leaf-1-2-parable status",
+      "ownerNodeId": "app-009"
+    },
+    {
+      "id": "art-030",
+      "path": "applications/010-leaf-1-3-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "010-leaf-1-3-heart prompt",
+      "ownerNodeId": "app-010"
+    },
+    {
+      "id": "art-031",
+      "path": "applications/010-leaf-1-3-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "010-leaf-1-3-heart result",
+      "ownerNodeId": "app-010"
+    },
+    {
+      "id": "art-032",
+      "path": "applications/010-leaf-1-3-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "010-leaf-1-3-heart status",
+      "ownerNodeId": "app-010"
+    },
+    {
+      "id": "art-033",
+      "path": "applications/011-leaf-1-3-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "011-leaf-1-3-forge prompt",
+      "ownerNodeId": "app-011"
+    },
+    {
+      "id": "art-034",
+      "path": "applications/011-leaf-1-3-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "011-leaf-1-3-forge result",
+      "ownerNodeId": "app-011"
+    },
+    {
+      "id": "art-035",
+      "path": "applications/011-leaf-1-3-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "011-leaf-1-3-forge status",
+      "ownerNodeId": "app-011"
+    },
+    {
+      "id": "art-036",
+      "path": "applications/012-leaf-1-3-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "012-leaf-1-3-parable prompt",
+      "ownerNodeId": "app-012"
+    },
+    {
+      "id": "art-037",
+      "path": "applications/012-leaf-1-3-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "012-leaf-1-3-parable result",
+      "ownerNodeId": "app-012"
+    },
+    {
+      "id": "art-038",
+      "path": "applications/012-leaf-1-3-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "012-leaf-1-3-parable status",
+      "ownerNodeId": "app-012"
+    },
+    {
+      "id": "art-039",
+      "path": "applications/013-leaf-2-1-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "013-leaf-2-1-heart prompt",
+      "ownerNodeId": "app-013"
+    },
+    {
+      "id": "art-040",
+      "path": "applications/013-leaf-2-1-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "013-leaf-2-1-heart result",
+      "ownerNodeId": "app-013"
+    },
+    {
+      "id": "art-041",
+      "path": "applications/013-leaf-2-1-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "013-leaf-2-1-heart status",
+      "ownerNodeId": "app-013"
+    },
+    {
+      "id": "art-042",
+      "path": "applications/014-leaf-2-1-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "014-leaf-2-1-forge prompt",
+      "ownerNodeId": "app-014"
+    },
+    {
+      "id": "art-043",
+      "path": "applications/014-leaf-2-1-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "014-leaf-2-1-forge result",
+      "ownerNodeId": "app-014"
+    },
+    {
+      "id": "art-044",
+      "path": "applications/014-leaf-2-1-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "014-leaf-2-1-forge status",
+      "ownerNodeId": "app-014"
+    },
+    {
+      "id": "art-045",
+      "path": "applications/015-leaf-2-1-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "015-leaf-2-1-parable prompt",
+      "ownerNodeId": "app-015"
+    },
+    {
+      "id": "art-046",
+      "path": "applications/015-leaf-2-1-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "015-leaf-2-1-parable result",
+      "ownerNodeId": "app-015"
+    },
+    {
+      "id": "art-047",
+      "path": "applications/015-leaf-2-1-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "015-leaf-2-1-parable status",
+      "ownerNodeId": "app-015"
+    },
+    {
+      "id": "art-048",
+      "path": "applications/016-leaf-2-2-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "016-leaf-2-2-heart prompt",
+      "ownerNodeId": "app-016"
+    },
+    {
+      "id": "art-049",
+      "path": "applications/016-leaf-2-2-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "016-leaf-2-2-heart result",
+      "ownerNodeId": "app-016"
+    },
+    {
+      "id": "art-050",
+      "path": "applications/016-leaf-2-2-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "016-leaf-2-2-heart status",
+      "ownerNodeId": "app-016"
+    },
+    {
+      "id": "art-051",
+      "path": "applications/017-leaf-2-2-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "017-leaf-2-2-forge prompt",
+      "ownerNodeId": "app-017"
+    },
+    {
+      "id": "art-052",
+      "path": "applications/017-leaf-2-2-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "017-leaf-2-2-forge result",
+      "ownerNodeId": "app-017"
+    },
+    {
+      "id": "art-053",
+      "path": "applications/017-leaf-2-2-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "017-leaf-2-2-forge status",
+      "ownerNodeId": "app-017"
+    },
+    {
+      "id": "art-054",
+      "path": "applications/018-leaf-2-2-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "018-leaf-2-2-parable prompt",
+      "ownerNodeId": "app-018"
+    },
+    {
+      "id": "art-055",
+      "path": "applications/018-leaf-2-2-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "018-leaf-2-2-parable result",
+      "ownerNodeId": "app-018"
+    },
+    {
+      "id": "art-056",
+      "path": "applications/018-leaf-2-2-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "018-leaf-2-2-parable status",
+      "ownerNodeId": "app-018"
+    },
+    {
+      "id": "art-057",
+      "path": "applications/019-leaf-2-3-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "019-leaf-2-3-heart prompt",
+      "ownerNodeId": "app-019"
+    },
+    {
+      "id": "art-058",
+      "path": "applications/019-leaf-2-3-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "019-leaf-2-3-heart result",
+      "ownerNodeId": "app-019"
+    },
+    {
+      "id": "art-059",
+      "path": "applications/019-leaf-2-3-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "019-leaf-2-3-heart status",
+      "ownerNodeId": "app-019"
+    },
+    {
+      "id": "art-060",
+      "path": "applications/020-leaf-2-3-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "020-leaf-2-3-forge prompt",
+      "ownerNodeId": "app-020"
+    },
+    {
+      "id": "art-061",
+      "path": "applications/020-leaf-2-3-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "020-leaf-2-3-forge result",
+      "ownerNodeId": "app-020"
+    },
+    {
+      "id": "art-062",
+      "path": "applications/020-leaf-2-3-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "020-leaf-2-3-forge status",
+      "ownerNodeId": "app-020"
+    },
+    {
+      "id": "art-063",
+      "path": "applications/021-leaf-2-3-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "021-leaf-2-3-parable prompt",
+      "ownerNodeId": "app-021"
+    },
+    {
+      "id": "art-064",
+      "path": "applications/021-leaf-2-3-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "021-leaf-2-3-parable result",
+      "ownerNodeId": "app-021"
+    },
+    {
+      "id": "art-065",
+      "path": "applications/021-leaf-2-3-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "021-leaf-2-3-parable status",
+      "ownerNodeId": "app-021"
+    },
+    {
+      "id": "art-066",
+      "path": "applications/022-leaf-2-4-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "022-leaf-2-4-heart prompt",
+      "ownerNodeId": "app-022"
+    },
+    {
+      "id": "art-067",
+      "path": "applications/022-leaf-2-4-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "022-leaf-2-4-heart result",
+      "ownerNodeId": "app-022"
+    },
+    {
+      "id": "art-068",
+      "path": "applications/022-leaf-2-4-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "022-leaf-2-4-heart status",
+      "ownerNodeId": "app-022"
+    },
+    {
+      "id": "art-069",
+      "path": "applications/023-leaf-2-4-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "023-leaf-2-4-forge prompt",
+      "ownerNodeId": "app-023"
+    },
+    {
+      "id": "art-070",
+      "path": "applications/023-leaf-2-4-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "023-leaf-2-4-forge result",
+      "ownerNodeId": "app-023"
+    },
+    {
+      "id": "art-071",
+      "path": "applications/023-leaf-2-4-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "023-leaf-2-4-forge status",
+      "ownerNodeId": "app-023"
+    },
+    {
+      "id": "art-072",
+      "path": "applications/024-leaf-2-4-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "024-leaf-2-4-parable prompt",
+      "ownerNodeId": "app-024"
+    },
+    {
+      "id": "art-073",
+      "path": "applications/024-leaf-2-4-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "024-leaf-2-4-parable result",
+      "ownerNodeId": "app-024"
+    },
+    {
+      "id": "art-074",
+      "path": "applications/024-leaf-2-4-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "024-leaf-2-4-parable status",
+      "ownerNodeId": "app-024"
+    },
+    {
+      "id": "art-075",
+      "path": "applications/025-leaf-3-1-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "025-leaf-3-1-heart prompt",
+      "ownerNodeId": "app-025"
+    },
+    {
+      "id": "art-076",
+      "path": "applications/025-leaf-3-1-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "025-leaf-3-1-heart result",
+      "ownerNodeId": "app-025"
+    },
+    {
+      "id": "art-077",
+      "path": "applications/025-leaf-3-1-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "025-leaf-3-1-heart status",
+      "ownerNodeId": "app-025"
+    },
+    {
+      "id": "art-078",
+      "path": "applications/026-leaf-3-1-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "026-leaf-3-1-forge prompt",
+      "ownerNodeId": "app-026"
+    },
+    {
+      "id": "art-079",
+      "path": "applications/026-leaf-3-1-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "026-leaf-3-1-forge result",
+      "ownerNodeId": "app-026"
+    },
+    {
+      "id": "art-080",
+      "path": "applications/026-leaf-3-1-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "026-leaf-3-1-forge status",
+      "ownerNodeId": "app-026"
+    },
+    {
+      "id": "art-081",
+      "path": "applications/027-leaf-3-1-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "027-leaf-3-1-parable prompt",
+      "ownerNodeId": "app-027"
+    },
+    {
+      "id": "art-082",
+      "path": "applications/027-leaf-3-1-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "027-leaf-3-1-parable result",
+      "ownerNodeId": "app-027"
+    },
+    {
+      "id": "art-083",
+      "path": "applications/027-leaf-3-1-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "027-leaf-3-1-parable status",
+      "ownerNodeId": "app-027"
+    },
+    {
+      "id": "art-084",
+      "path": "applications/028-leaf-3-2-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "028-leaf-3-2-heart prompt",
+      "ownerNodeId": "app-028"
+    },
+    {
+      "id": "art-085",
+      "path": "applications/028-leaf-3-2-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "028-leaf-3-2-heart result",
+      "ownerNodeId": "app-028"
+    },
+    {
+      "id": "art-086",
+      "path": "applications/028-leaf-3-2-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "028-leaf-3-2-heart status",
+      "ownerNodeId": "app-028"
+    },
+    {
+      "id": "art-087",
+      "path": "applications/029-leaf-3-2-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "029-leaf-3-2-forge prompt",
+      "ownerNodeId": "app-029"
+    },
+    {
+      "id": "art-088",
+      "path": "applications/029-leaf-3-2-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "029-leaf-3-2-forge result",
+      "ownerNodeId": "app-029"
+    },
+    {
+      "id": "art-089",
+      "path": "applications/029-leaf-3-2-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "029-leaf-3-2-forge status",
+      "ownerNodeId": "app-029"
+    },
+    {
+      "id": "art-090",
+      "path": "applications/030-leaf-3-2-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "030-leaf-3-2-parable prompt",
+      "ownerNodeId": "app-030"
+    },
+    {
+      "id": "art-091",
+      "path": "applications/030-leaf-3-2-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "030-leaf-3-2-parable result",
+      "ownerNodeId": "app-030"
+    },
+    {
+      "id": "art-092",
+      "path": "applications/030-leaf-3-2-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "030-leaf-3-2-parable status",
+      "ownerNodeId": "app-030"
+    },
+    {
+      "id": "art-093",
+      "path": "applications/031-leaf-4-1-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "031-leaf-4-1-heart prompt",
+      "ownerNodeId": "app-031"
+    },
+    {
+      "id": "art-094",
+      "path": "applications/031-leaf-4-1-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "031-leaf-4-1-heart result",
+      "ownerNodeId": "app-031"
+    },
+    {
+      "id": "art-095",
+      "path": "applications/031-leaf-4-1-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "031-leaf-4-1-heart status",
+      "ownerNodeId": "app-031"
+    },
+    {
+      "id": "art-096",
+      "path": "applications/032-leaf-4-1-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "032-leaf-4-1-forge prompt",
+      "ownerNodeId": "app-032"
+    },
+    {
+      "id": "art-097",
+      "path": "applications/032-leaf-4-1-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "032-leaf-4-1-forge result",
+      "ownerNodeId": "app-032"
+    },
+    {
+      "id": "art-098",
+      "path": "applications/032-leaf-4-1-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "032-leaf-4-1-forge status",
+      "ownerNodeId": "app-032"
+    },
+    {
+      "id": "art-099",
+      "path": "applications/033-leaf-4-1-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "033-leaf-4-1-parable prompt",
+      "ownerNodeId": "app-033"
+    },
+    {
+      "id": "art-100",
+      "path": "applications/033-leaf-4-1-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "033-leaf-4-1-parable result",
+      "ownerNodeId": "app-033"
+    },
+    {
+      "id": "art-101",
+      "path": "applications/033-leaf-4-1-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "033-leaf-4-1-parable status",
+      "ownerNodeId": "app-033"
+    },
+    {
+      "id": "art-102",
+      "path": "applications/034-leaf-4-2-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "034-leaf-4-2-heart prompt",
+      "ownerNodeId": "app-034"
+    },
+    {
+      "id": "art-103",
+      "path": "applications/034-leaf-4-2-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "034-leaf-4-2-heart result",
+      "ownerNodeId": "app-034"
+    },
+    {
+      "id": "art-104",
+      "path": "applications/034-leaf-4-2-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "034-leaf-4-2-heart status",
+      "ownerNodeId": "app-034"
+    },
+    {
+      "id": "art-105",
+      "path": "applications/035-leaf-4-2-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "035-leaf-4-2-forge prompt",
+      "ownerNodeId": "app-035"
+    },
+    {
+      "id": "art-106",
+      "path": "applications/035-leaf-4-2-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "035-leaf-4-2-forge result",
+      "ownerNodeId": "app-035"
+    },
+    {
+      "id": "art-107",
+      "path": "applications/035-leaf-4-2-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "035-leaf-4-2-forge status",
+      "ownerNodeId": "app-035"
+    },
+    {
+      "id": "art-108",
+      "path": "applications/036-leaf-4-2-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "036-leaf-4-2-parable prompt",
+      "ownerNodeId": "app-036"
+    },
+    {
+      "id": "art-109",
+      "path": "applications/036-leaf-4-2-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "036-leaf-4-2-parable result",
+      "ownerNodeId": "app-036"
+    },
+    {
+      "id": "art-110",
+      "path": "applications/036-leaf-4-2-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "036-leaf-4-2-parable status",
+      "ownerNodeId": "app-036"
+    },
+    {
+      "id": "art-111",
+      "path": "applications/037-leaf-4-3-heart/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "037-leaf-4-3-heart prompt",
+      "ownerNodeId": "app-037"
+    },
+    {
+      "id": "art-112",
+      "path": "applications/037-leaf-4-3-heart/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "037-leaf-4-3-heart result",
+      "ownerNodeId": "app-037"
+    },
+    {
+      "id": "art-113",
+      "path": "applications/037-leaf-4-3-heart/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "037-leaf-4-3-heart status",
+      "ownerNodeId": "app-037"
+    },
+    {
+      "id": "art-114",
+      "path": "applications/038-leaf-4-3-forge/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "038-leaf-4-3-forge prompt",
+      "ownerNodeId": "app-038"
+    },
+    {
+      "id": "art-115",
+      "path": "applications/038-leaf-4-3-forge/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "038-leaf-4-3-forge result",
+      "ownerNodeId": "app-038"
+    },
+    {
+      "id": "art-116",
+      "path": "applications/038-leaf-4-3-forge/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "038-leaf-4-3-forge status",
+      "ownerNodeId": "app-038"
+    },
+    {
+      "id": "art-117",
+      "path": "applications/039-leaf-4-3-parable/prompt.md",
+      "mediaType": "text/markdown",
+      "role": "application-prompt",
+      "title": "039-leaf-4-3-parable prompt",
+      "ownerNodeId": "app-039"
+    },
+    {
+      "id": "art-118",
+      "path": "applications/039-leaf-4-3-parable/result.md",
+      "mediaType": "text/markdown",
+      "role": "application-result",
+      "title": "039-leaf-4-3-parable result",
+      "ownerNodeId": "app-039"
+    },
+    {
+      "id": "art-119",
+      "path": "applications/039-leaf-4-3-parable/status.md",
+      "mediaType": "text/markdown",
+      "role": "application-status",
+      "title": "039-leaf-4-3-parable status",
+      "ownerNodeId": "app-039"
+    },
+    {
+      "id": "art-120",
+      "path": "compile-notes.md",
+      "mediaType": "text/markdown",
+      "role": "compile-notes",
+      "title": "Compile notes",
+      "ownerNodeId": "source-run"
+    },
+    {
+      "id": "art-121",
+      "path": "compiler-prompt.md",
+      "mediaType": "text/markdown",
+      "role": "compiler-prompt",
+      "title": "Compiler handoff",
+      "ownerNodeId": "source-run"
+    },
+    {
+      "id": "art-122",
+      "path": "final.md",
+      "mediaType": "text/markdown",
+      "role": "final",
+      "title": "Final assembled result",
+      "ownerNodeId": "stage-finalization"
+    },
+    {
+      "id": "art-123",
+      "path": "finalizer-prompt.md",
+      "mediaType": "text/markdown",
+      "role": "finalizer-prompt",
+      "title": "Finalizer handoff",
+      "ownerNodeId": "stage-finalization"
+    },
+    {
+      "id": "art-124",
+      "path": "interpretation.md",
+      "mediaType": "text/markdown",
+      "role": "interpretation",
+      "title": "Runtime interpretation",
+      "ownerNodeId": "stage-interpretation"
+    },
+    {
+      "id": "art-125",
+      "path": "program.md",
+      "mediaType": "text/markdown",
+      "role": "program",
+      "title": "Compiled Sem program",
+      "ownerNodeId": "source-run"
+    },
+    {
+      "id": "art-126",
+      "path": "request.md",
+      "mediaType": "text/markdown",
+      "role": "request",
+      "title": "Source request",
+      "ownerNodeId": "source-run"
+    },
+    {
+      "id": "art-127",
+      "path": "run.md",
+      "mediaType": "text/markdown",
+      "role": "run-log",
+      "title": "Run log",
+      "ownerNodeId": "stage-interpretation"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source-run",
+      "type": "source",
+      "title": "KJV essential-structure request",
+      "subtitle": "Request, compiler handoff, and Sem program",
+      "status": "succeeded",
+      "emphasis": "primary",
+      "panels": [
+        {
+          "id": "request",
+          "label": "Request",
+          "artifactId": "art-126",
+          "role": "primary",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "program",
+          "label": "Program",
+          "artifactId": "art-125",
+          "role": "source",
+          "renderAs": "code",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "compiler",
+          "label": "Compiler handoff",
+          "artifactId": "art-121",
+          "role": "source",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        },
+        {
+          "id": "compile-notes",
+          "label": "Compile notes",
+          "artifactId": "art-120",
+          "role": "explanation",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 3,
+          "defaultOpen": false
+        }
+      ]
+    },
+    {
+      "id": "stage-interpretation",
+      "type": "stage",
+      "title": "Interpretation and orchestration",
+      "status": "succeeded",
+      "emphasis": "context",
+      "panels": [
+        {
+          "id": "interpretation",
+          "label": "Interpretation",
+          "artifactId": "art-124",
+          "role": "explanation",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "run-log",
+          "label": "Run log",
+          "artifactId": "art-127",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        }
+      ]
+    },
+    {
+      "id": "stage-finalization",
+      "type": "stage",
+      "title": "Finalization",
+      "status": "succeeded",
+      "emphasis": "context",
+      "panels": [
+        {
+          "id": "final",
+          "label": "Final assembled result",
+          "artifactId": "art-122",
+          "role": "primary",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "finalizer",
+          "label": "Finalizer handoff",
+          "artifactId": "art-123",
+          "role": "explanation",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        }
+      ]
+    },
+    {
+      "id": "app-001",
+      "type": "application",
+      "title": "Deterministic writer draw",
+      "summary": "Selected three distinct writer-orientation bundles with a reproducible receipt.",
+      "status": "succeeded",
+      "emphasis": "primary",
+      "ordinal": 1,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-002",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-001",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-003",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/001-deterministic-draw",
+        "operator": {
+          "kind": "local",
+          "name": "deterministicDraw3"
+        }
+      }
+    },
+    {
+      "id": "app-002",
+      "type": "application",
+      "title": "Blend anonymous craft mechanisms",
+      "summary": "Combined the selected bundles into an anonymous craft brief.",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 2,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-005",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-004",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-006",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/002-blend-craft-mechanisms",
+        "operator": {
+          "kind": "local",
+          "name": "blendBroadMechanisms"
+        }
+      }
+    },
+    {
+      "id": "app-003",
+      "type": "application",
+      "title": "Build major.minor outline",
+      "summary": "Produced the accepted twelve-leaf KJV outline after one rejected oversized attempt.",
+      "status": "succeeded",
+      "emphasis": "primary",
+      "ordinal": 3,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-010",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-009",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-011",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        },
+        {
+          "id": "attempt-1",
+          "label": "Rejected first attempt",
+          "artifactId": "art-007",
+          "role": "attempt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 3,
+          "defaultOpen": false
+        },
+        {
+          "id": "attempt-2-prompt",
+          "label": "Retry prompt",
+          "artifactId": "art-008",
+          "role": "attempt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 4,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/003-build-major-minor-outline",
+        "operator": {
+          "kind": "local",
+          "name": "buildMajorMinorOutline"
+        }
+      },
+      "groupIds": [
+        "group-outline-retry"
+      ]
+    },
+    {
+      "id": "app-004",
+      "type": "application",
+      "title": "Leaf 1.1 · Heart question",
+      "summary": "Creation, Ruin, and the Nations",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 4,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-013",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-012",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-014",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/004-leaf-1-1-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-1"
+      ]
+    },
+    {
+      "id": "app-005",
+      "type": "application",
+      "title": "Leaf 1.1 · Question forge",
+      "summary": "Creation, Ruin, and the Nations",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 5,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-016",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-015",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-017",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/005-leaf-1-1-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-1"
+      ]
+    },
+    {
+      "id": "app-006",
+      "type": "application",
+      "title": "Leaf 1.1 · Parable",
+      "summary": "Creation, Ruin, and the Nations",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 6,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-019",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-018",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-020",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/006-leaf-1-1-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-1"
+      ]
+    },
+    {
+      "id": "app-007",
+      "type": "application",
+      "title": "Leaf 1.2 · Heart question",
+      "summary": "The Patriarchs and the Covenant Promise",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 7,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-022",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-021",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-023",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/007-leaf-1-2-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-2"
+      ]
+    },
+    {
+      "id": "app-008",
+      "type": "application",
+      "title": "Leaf 1.2 · Question forge",
+      "summary": "The Patriarchs and the Covenant Promise",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 8,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-025",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-024",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-026",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/008-leaf-1-2-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-2"
+      ]
+    },
+    {
+      "id": "app-009",
+      "type": "application",
+      "title": "Leaf 1.2 · Parable",
+      "summary": "The Patriarchs and the Covenant Promise",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 9,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-028",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-027",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-029",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/009-leaf-1-2-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-2"
+      ]
+    },
+    {
+      "id": "app-010",
+      "type": "application",
+      "title": "Leaf 1.3 · Heart question",
+      "summary": "Exodus, Sinai, and the Wilderness",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 10,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-031",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-030",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-032",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/010-leaf-1-3-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-3"
+      ]
+    },
+    {
+      "id": "app-011",
+      "type": "application",
+      "title": "Leaf 1.3 · Question forge",
+      "summary": "Exodus, Sinai, and the Wilderness",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 11,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-034",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-033",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-035",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/011-leaf-1-3-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-3"
+      ]
+    },
+    {
+      "id": "app-012",
+      "type": "application",
+      "title": "Leaf 1.3 · Parable",
+      "summary": "Exodus, Sinai, and the Wilderness",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 12,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-037",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-036",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-038",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/012-leaf-1-3-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-1-3"
+      ]
+    },
+    {
+      "id": "app-013",
+      "type": "application",
+      "title": "Leaf 2.1 · Heart question",
+      "summary": "Conquest, Settlement, and the Age of the Judges",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 13,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-040",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-039",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-041",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/013-leaf-2-1-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-1"
+      ]
+    },
+    {
+      "id": "app-014",
+      "type": "application",
+      "title": "Leaf 2.1 · Question forge",
+      "summary": "Conquest, Settlement, and the Age of the Judges",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 14,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-043",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-042",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-044",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/014-leaf-2-1-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-1"
+      ]
+    },
+    {
+      "id": "app-015",
+      "type": "application",
+      "title": "Leaf 2.1 · Parable",
+      "summary": "Conquest, Settlement, and the Age of the Judges",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 15,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-046",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-045",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-047",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/015-leaf-2-1-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-1"
+      ]
+    },
+    {
+      "id": "app-016",
+      "type": "application",
+      "title": "Leaf 2.2 · Heart question",
+      "summary": "Monarchy, Division, Exile, and Return",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 16,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-049",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-048",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-050",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/016-leaf-2-2-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-2"
+      ]
+    },
+    {
+      "id": "app-017",
+      "type": "application",
+      "title": "Leaf 2.2 · Question forge",
+      "summary": "Monarchy, Division, Exile, and Return",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 17,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-052",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-051",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-053",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/017-leaf-2-2-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-2"
+      ]
+    },
+    {
+      "id": "app-018",
+      "type": "application",
+      "title": "Leaf 2.2 · Parable",
+      "summary": "Monarchy, Division, Exile, and Return",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 18,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-055",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-054",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-056",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/018-leaf-2-2-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-2"
+      ]
+    },
+    {
+      "id": "app-019",
+      "type": "application",
+      "title": "Leaf 2.3 · Heart question",
+      "summary": "Prayer, Suffering, and the Search for Wisdom",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 19,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-058",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-057",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-059",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/019-leaf-2-3-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-3"
+      ]
+    },
+    {
+      "id": "app-020",
+      "type": "application",
+      "title": "Leaf 2.3 · Question forge",
+      "summary": "Prayer, Suffering, and the Search for Wisdom",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 20,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-061",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-060",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-062",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/020-leaf-2-3-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-3"
+      ]
+    },
+    {
+      "id": "app-021",
+      "type": "application",
+      "title": "Leaf 2.3 · Parable",
+      "summary": "Prayer, Suffering, and the Search for Wisdom",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 21,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-064",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-063",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-065",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/021-leaf-2-3-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-3"
+      ]
+    },
+    {
+      "id": "app-022",
+      "type": "application",
+      "title": "Leaf 2.4 · Heart question",
+      "summary": "Prophetic Judgment and Restorative Hope",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 22,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-067",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-066",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-068",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/022-leaf-2-4-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-4"
+      ]
+    },
+    {
+      "id": "app-023",
+      "type": "application",
+      "title": "Leaf 2.4 · Question forge",
+      "summary": "Prophetic Judgment and Restorative Hope",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 23,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-070",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-069",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-071",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/023-leaf-2-4-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-4"
+      ]
+    },
+    {
+      "id": "app-024",
+      "type": "application",
+      "title": "Leaf 2.4 · Parable",
+      "summary": "Prophetic Judgment and Restorative Hope",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 24,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-073",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-072",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-074",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/024-leaf-2-4-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-2-4"
+      ]
+    },
+    {
+      "id": "app-025",
+      "type": "application",
+      "title": "Leaf 3.1 · Heart question",
+      "summary": "The Gospel of the Kingdom in Jesus",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 25,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-076",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-075",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-077",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/025-leaf-3-1-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-3-1"
+      ]
+    },
+    {
+      "id": "app-026",
+      "type": "application",
+      "title": "Leaf 3.1 · Question forge",
+      "summary": "The Gospel of the Kingdom in Jesus",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 26,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-079",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-078",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-080",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/026-leaf-3-1-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-3-1"
+      ]
+    },
+    {
+      "id": "app-027",
+      "type": "application",
+      "title": "Leaf 3.1 · Parable",
+      "summary": "The Gospel of the Kingdom in Jesus",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 27,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-082",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-081",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-083",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/027-leaf-3-1-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-3-1"
+      ]
+    },
+    {
+      "id": "app-028",
+      "type": "application",
+      "title": "Leaf 3.2 · Heart question",
+      "summary": "The Spirit-Empowered Witness from Jerusalem to Rome",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 28,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-085",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-084",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-086",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/028-leaf-3-2-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-3-2"
+      ]
+    },
+    {
+      "id": "app-029",
+      "type": "application",
+      "title": "Leaf 3.2 · Question forge",
+      "summary": "The Spirit-Empowered Witness from Jerusalem to Rome",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 29,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-088",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-087",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-089",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/029-leaf-3-2-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-3-2"
+      ]
+    },
+    {
+      "id": "app-030",
+      "type": "application",
+      "title": "Leaf 3.2 · Parable",
+      "summary": "The Spirit-Empowered Witness from Jerusalem to Rome",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 30,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-091",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-090",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-092",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/030-leaf-3-2-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-3-2"
+      ]
+    },
+    {
+      "id": "app-031",
+      "type": "application",
+      "title": "Leaf 4.1 · Heart question",
+      "summary": "Paul's Gospel and the Life of the Churches",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 31,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-094",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-093",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-095",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/031-leaf-4-1-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-1"
+      ]
+    },
+    {
+      "id": "app-032",
+      "type": "application",
+      "title": "Leaf 4.1 · Question forge",
+      "summary": "Paul's Gospel and the Life of the Churches",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 32,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-097",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-096",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-098",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/032-leaf-4-1-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-1"
+      ]
+    },
+    {
+      "id": "app-033",
+      "type": "application",
+      "title": "Leaf 4.1 · Parable",
+      "summary": "Paul's Gospel and the Life of the Churches",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 33,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-100",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-099",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-101",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/033-leaf-4-1-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-1"
+      ]
+    },
+    {
+      "id": "app-034",
+      "type": "application",
+      "title": "Leaf 4.2 · Heart question",
+      "summary": "Persevering Faith in the General Epistles",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 34,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-103",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-102",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-104",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/034-leaf-4-2-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-2"
+      ]
+    },
+    {
+      "id": "app-035",
+      "type": "application",
+      "title": "Leaf 4.2 · Question forge",
+      "summary": "Persevering Faith in the General Epistles",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 35,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-106",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-105",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-107",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/035-leaf-4-2-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-2"
+      ]
+    },
+    {
+      "id": "app-036",
+      "type": "application",
+      "title": "Leaf 4.2 · Parable",
+      "summary": "Persevering Faith in the General Epistles",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 36,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-109",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-108",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-110",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/036-leaf-4-2-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-2"
+      ]
+    },
+    {
+      "id": "app-037",
+      "type": "application",
+      "title": "Leaf 4.3 · Heart question",
+      "summary": "Revelation, Judgment, and New Creation",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 37,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-112",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-111",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-113",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/037-leaf-4-3-heart",
+        "operator": {
+          "kind": "local",
+          "name": "formIndependentHeartQuestion"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-3"
+      ]
+    },
+    {
+      "id": "app-038",
+      "type": "application",
+      "title": "Leaf 4.3 · Question forge",
+      "summary": "Revelation, Judgment, and New Creation",
+      "status": "succeeded",
+      "emphasis": "hidden",
+      "ordinal": 38,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-115",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": false
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-114",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-116",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/038-leaf-4-3-forge",
+        "operator": {
+          "kind": "standard-library",
+          "name": "question-forge"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-3"
+      ]
+    },
+    {
+      "id": "app-039",
+      "type": "application",
+      "title": "Leaf 4.3 · Parable",
+      "summary": "Revelation, Judgment, and New Creation",
+      "status": "succeeded",
+      "emphasis": "normal",
+      "ordinal": 39,
+      "panels": [
+        {
+          "id": "result",
+          "label": "Accepted result",
+          "artifactId": "art-118",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "prompt",
+          "label": "Worker prompt",
+          "artifactId": "art-117",
+          "role": "prompt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "status",
+          "label": "Application status",
+          "artifactId": "art-119",
+          "role": "status",
+          "renderAs": "metadata",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 2,
+          "defaultOpen": false
+        }
+      ],
+      "application": {
+        "directory": "applications/039-leaf-4-3-parable",
+        "operator": {
+          "kind": "standard-library",
+          "name": "parable"
+        }
+      },
+      "groupIds": [
+        "group-leaf-map",
+        "group-leaf-4-3"
+      ]
+    },
+    {
+      "id": "event-outline-attempt-1",
+      "type": "event",
+      "title": "Outline attempt 1 rejected",
+      "subtitle": "Thirteen leaves exceeded the hard cap of twelve",
+      "status": "failed",
+      "emphasis": "context",
+      "groupIds": [
+        "group-outline-retry"
+      ],
+      "panels": [
+        {
+          "id": "attempt",
+          "label": "Rejected attempt",
+          "artifactId": "art-007",
+          "role": "attempt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "retry-prompt",
+          "label": "Retry prompt",
+          "artifactId": "art-008",
+          "role": "attempt",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 1,
+          "defaultOpen": false
+        }
+      ]
+    },
+    {
+      "id": "result-parable-cycle",
+      "type": "result",
+      "title": "Twelve parables in leaf order",
+      "subtitle": "The structural leafResults collection returned by the program",
+      "status": "succeeded",
+      "emphasis": "primary",
+      "panels": [
+        {
+          "id": "leaf-1-1",
+          "label": "1.1 · Creation, Ruin, and the Nations",
+          "artifactId": "art-019",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 0,
+          "defaultOpen": true
+        },
+        {
+          "id": "leaf-1-2",
+          "label": "1.2 · The Patriarchs and the Covenant Promise",
+          "artifactId": "art-028",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 1,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-1-3",
+          "label": "1.3 · Exodus, Sinai, and the Wilderness",
+          "artifactId": "art-037",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 2,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-2-1",
+          "label": "2.1 · Conquest, Settlement, and the Age of the Judges",
+          "artifactId": "art-046",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 3,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-2-2",
+          "label": "2.2 · Monarchy, Division, Exile, and Return",
+          "artifactId": "art-055",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 4,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-2-3",
+          "label": "2.3 · Prayer, Suffering, and the Search for Wisdom",
+          "artifactId": "art-064",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 5,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-2-4",
+          "label": "2.4 · Prophetic Judgment and Restorative Hope",
+          "artifactId": "art-073",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 6,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-3-1",
+          "label": "3.1 · The Gospel of the Kingdom in Jesus",
+          "artifactId": "art-082",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 7,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-3-2",
+          "label": "3.2 · The Spirit-Empowered Witness from Jerusalem to Rome",
+          "artifactId": "art-091",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 8,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-4-1",
+          "label": "4.1 · Paul's Gospel and the Life of the Churches",
+          "artifactId": "art-100",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 9,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-4-2",
+          "label": "4.2 · Persevering Faith in the General Epistles",
+          "artifactId": "art-109",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 10,
+          "defaultOpen": false
+        },
+        {
+          "id": "leaf-4-3",
+          "label": "4.3 · Revelation, Judgment, and New Creation",
+          "artifactId": "art-118",
+          "role": "result",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "markdown-heading",
+            "heading": "Result",
+            "occurrence": 1
+          },
+          "order": 11,
+          "defaultOpen": false
+        },
+        {
+          "id": "assembled-final",
+          "label": "Assembled final document",
+          "artifactId": "art-122",
+          "role": "explanation",
+          "renderAs": "markdown",
+          "selector": {
+            "kind": "whole"
+          },
+          "order": 12,
+          "defaultOpen": false
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-source-interpretation",
+      "from": "source-run",
+      "to": "stage-interpretation",
+      "type": "provenance",
+      "label": "compiled and interpreted"
+    },
+    {
+      "id": "edge-interpretation-draw",
+      "from": "stage-interpretation",
+      "to": "app-001",
+      "type": "control",
+      "label": "scheduled"
+    },
+    {
+      "id": "edge-interpretation-outline",
+      "from": "stage-interpretation",
+      "to": "app-003",
+      "type": "control",
+      "label": "scheduled"
+    },
+    {
+      "id": "edge-source-draw",
+      "from": "source-run",
+      "to": "app-001",
+      "type": "value",
+      "label": "timestamp and ordered writer pool"
+    },
+    {
+      "id": "edge-source-outline",
+      "from": "source-run",
+      "to": "app-003",
+      "type": "value",
+      "label": "named corpus reference"
+    },
+    {
+      "id": "edge-draw-blend",
+      "from": "app-001",
+      "to": "app-002",
+      "type": "value",
+      "label": "selected mechanism bundles"
+    },
+    {
+      "id": "edge-outline-retry",
+      "from": "event-outline-attempt-1",
+      "to": "app-003",
+      "type": "retry",
+      "label": "single mechanical retry"
+    },
+    {
+      "id": "edge-results-finalization",
+      "from": "result-parable-cycle",
+      "to": "stage-finalization",
+      "type": "provenance",
+      "label": "assembled without rewriting"
+    },
+    {
+      "id": "edge-outline-heart-004",
+      "from": "app-003",
+      "to": "app-004",
+      "type": "value",
+      "label": "leaf 1.1 descriptor",
+      "order": 0
+    },
+    {
+      "id": "edge-heart-forge-005",
+      "from": "app-004",
+      "to": "app-005",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-006",
+      "from": "app-005",
+      "to": "app-006",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-006",
+      "from": "app-002",
+      "to": "app-006",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-006",
+      "from": "app-006",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 1.1",
+      "order": 0
+    },
+    {
+      "id": "edge-outline-heart-007",
+      "from": "app-003",
+      "to": "app-007",
+      "type": "value",
+      "label": "leaf 1.2 descriptor",
+      "order": 1
+    },
+    {
+      "id": "edge-heart-forge-008",
+      "from": "app-007",
+      "to": "app-008",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-009",
+      "from": "app-008",
+      "to": "app-009",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-009",
+      "from": "app-002",
+      "to": "app-009",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-009",
+      "from": "app-009",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 1.2",
+      "order": 1
+    },
+    {
+      "id": "edge-outline-heart-010",
+      "from": "app-003",
+      "to": "app-010",
+      "type": "value",
+      "label": "leaf 1.3 descriptor",
+      "order": 2
+    },
+    {
+      "id": "edge-heart-forge-011",
+      "from": "app-010",
+      "to": "app-011",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-012",
+      "from": "app-011",
+      "to": "app-012",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-012",
+      "from": "app-002",
+      "to": "app-012",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-012",
+      "from": "app-012",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 1.3",
+      "order": 2
+    },
+    {
+      "id": "edge-outline-heart-013",
+      "from": "app-003",
+      "to": "app-013",
+      "type": "value",
+      "label": "leaf 2.1 descriptor",
+      "order": 3
+    },
+    {
+      "id": "edge-heart-forge-014",
+      "from": "app-013",
+      "to": "app-014",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-015",
+      "from": "app-014",
+      "to": "app-015",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-015",
+      "from": "app-002",
+      "to": "app-015",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-015",
+      "from": "app-015",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 2.1",
+      "order": 3
+    },
+    {
+      "id": "edge-outline-heart-016",
+      "from": "app-003",
+      "to": "app-016",
+      "type": "value",
+      "label": "leaf 2.2 descriptor",
+      "order": 4
+    },
+    {
+      "id": "edge-heart-forge-017",
+      "from": "app-016",
+      "to": "app-017",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-018",
+      "from": "app-017",
+      "to": "app-018",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-018",
+      "from": "app-002",
+      "to": "app-018",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-018",
+      "from": "app-018",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 2.2",
+      "order": 4
+    },
+    {
+      "id": "edge-outline-heart-019",
+      "from": "app-003",
+      "to": "app-019",
+      "type": "value",
+      "label": "leaf 2.3 descriptor",
+      "order": 5
+    },
+    {
+      "id": "edge-heart-forge-020",
+      "from": "app-019",
+      "to": "app-020",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-021",
+      "from": "app-020",
+      "to": "app-021",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-021",
+      "from": "app-002",
+      "to": "app-021",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-021",
+      "from": "app-021",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 2.3",
+      "order": 5
+    },
+    {
+      "id": "edge-outline-heart-022",
+      "from": "app-003",
+      "to": "app-022",
+      "type": "value",
+      "label": "leaf 2.4 descriptor",
+      "order": 6
+    },
+    {
+      "id": "edge-heart-forge-023",
+      "from": "app-022",
+      "to": "app-023",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-024",
+      "from": "app-023",
+      "to": "app-024",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-024",
+      "from": "app-002",
+      "to": "app-024",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-024",
+      "from": "app-024",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 2.4",
+      "order": 6
+    },
+    {
+      "id": "edge-outline-heart-025",
+      "from": "app-003",
+      "to": "app-025",
+      "type": "value",
+      "label": "leaf 3.1 descriptor",
+      "order": 7
+    },
+    {
+      "id": "edge-heart-forge-026",
+      "from": "app-025",
+      "to": "app-026",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-027",
+      "from": "app-026",
+      "to": "app-027",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-027",
+      "from": "app-002",
+      "to": "app-027",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-027",
+      "from": "app-027",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 3.1",
+      "order": 7
+    },
+    {
+      "id": "edge-outline-heart-028",
+      "from": "app-003",
+      "to": "app-028",
+      "type": "value",
+      "label": "leaf 3.2 descriptor",
+      "order": 8
+    },
+    {
+      "id": "edge-heart-forge-029",
+      "from": "app-028",
+      "to": "app-029",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-030",
+      "from": "app-029",
+      "to": "app-030",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-030",
+      "from": "app-002",
+      "to": "app-030",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-030",
+      "from": "app-030",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 3.2",
+      "order": 8
+    },
+    {
+      "id": "edge-outline-heart-031",
+      "from": "app-003",
+      "to": "app-031",
+      "type": "value",
+      "label": "leaf 4.1 descriptor",
+      "order": 9
+    },
+    {
+      "id": "edge-heart-forge-032",
+      "from": "app-031",
+      "to": "app-032",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-033",
+      "from": "app-032",
+      "to": "app-033",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-033",
+      "from": "app-002",
+      "to": "app-033",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-033",
+      "from": "app-033",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 4.1",
+      "order": 9
+    },
+    {
+      "id": "edge-outline-heart-034",
+      "from": "app-003",
+      "to": "app-034",
+      "type": "value",
+      "label": "leaf 4.2 descriptor",
+      "order": 10
+    },
+    {
+      "id": "edge-heart-forge-035",
+      "from": "app-034",
+      "to": "app-035",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-036",
+      "from": "app-035",
+      "to": "app-036",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-036",
+      "from": "app-002",
+      "to": "app-036",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-036",
+      "from": "app-036",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 4.2",
+      "order": 10
+    },
+    {
+      "id": "edge-outline-heart-037",
+      "from": "app-003",
+      "to": "app-037",
+      "type": "value",
+      "label": "leaf 4.3 descriptor",
+      "order": 11
+    },
+    {
+      "id": "edge-heart-forge-038",
+      "from": "app-037",
+      "to": "app-038",
+      "type": "value",
+      "label": "surface question"
+    },
+    {
+      "id": "edge-forge-parable-039",
+      "from": "app-038",
+      "to": "app-039",
+      "type": "value",
+      "label": "forged question only"
+    },
+    {
+      "id": "edge-craft-parable-039",
+      "from": "app-002",
+      "to": "app-039",
+      "type": "value",
+      "label": "anonymous craft brief"
+    },
+    {
+      "id": "edge-return-parable-039",
+      "from": "app-039",
+      "to": "result-parable-cycle",
+      "type": "return",
+      "label": "leaf 4.3",
+      "order": 11
+    }
+  ],
+  "groups": [
+    {
+      "id": "group-outline-retry",
+      "title": "Outline retry",
+      "type": "retry",
+      "memberNodeIds": [
+        "event-outline-attempt-1",
+        "app-003"
+      ],
+      "summary": "The first 13-leaf attempt was rejected; the retry produced the accepted 12-leaf outline.",
+      "collapsedByDefault": false
+    },
+    {
+      "id": "group-leaf-map",
+      "title": "Independent leaf map",
+      "type": "map",
+      "memberNodeIds": [
+        "app-004",
+        "app-005",
+        "app-006",
+        "app-007",
+        "app-008",
+        "app-009",
+        "app-010",
+        "app-011",
+        "app-012",
+        "app-013",
+        "app-014",
+        "app-015",
+        "app-016",
+        "app-017",
+        "app-018",
+        "app-019",
+        "app-020",
+        "app-021",
+        "app-022",
+        "app-023",
+        "app-024",
+        "app-025",
+        "app-026",
+        "app-027",
+        "app-028",
+        "app-029",
+        "app-030",
+        "app-031",
+        "app-032",
+        "app-033",
+        "app-034",
+        "app-035",
+        "app-036",
+        "app-037",
+        "app-038",
+        "app-039"
+      ],
+      "summary": "Twelve ordered leaf chains, each heart question → question-forge → parable.",
+      "collapsedByDefault": false
+    },
+    {
+      "id": "group-leaf-1-1",
+      "title": "Leaf 1.1 · Creation, Ruin, and the Nations",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-004",
+        "app-005",
+        "app-006"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 1.1.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-1-2",
+      "title": "Leaf 1.2 · The Patriarchs and the Covenant Promise",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-007",
+        "app-008",
+        "app-009"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 1.2.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-1-3",
+      "title": "Leaf 1.3 · Exodus, Sinai, and the Wilderness",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-010",
+        "app-011",
+        "app-012"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 1.3.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-2-1",
+      "title": "Leaf 2.1 · Conquest, Settlement, and the Age of the Judges",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-013",
+        "app-014",
+        "app-015"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 2.1.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-2-2",
+      "title": "Leaf 2.2 · Monarchy, Division, Exile, and Return",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-016",
+        "app-017",
+        "app-018"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 2.2.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-2-3",
+      "title": "Leaf 2.3 · Prayer, Suffering, and the Search for Wisdom",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-019",
+        "app-020",
+        "app-021"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 2.3.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-2-4",
+      "title": "Leaf 2.4 · Prophetic Judgment and Restorative Hope",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-022",
+        "app-023",
+        "app-024"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 2.4.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-3-1",
+      "title": "Leaf 3.1 · The Gospel of the Kingdom in Jesus",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-025",
+        "app-026",
+        "app-027"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 3.1.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-3-2",
+      "title": "Leaf 3.2 · The Spirit-Empowered Witness from Jerusalem to Rome",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-028",
+        "app-029",
+        "app-030"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 3.2.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-4-1",
+      "title": "Leaf 4.1 · Paul's Gospel and the Life of the Churches",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-031",
+        "app-032",
+        "app-033"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 4.1.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-4-2",
+      "title": "Leaf 4.2 · Persevering Faith in the General Epistles",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-034",
+        "app-035",
+        "app-036"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 4.2.",
+      "collapsedByDefault": true
+    },
+    {
+      "id": "group-leaf-4-3",
+      "title": "Leaf 4.3 · Revelation, Judgment, and New Creation",
+      "type": "phase",
+      "memberNodeIds": [
+        "app-037",
+        "app-038",
+        "app-039"
+      ],
+      "parentGroupId": "group-leaf-map",
+      "summary": "Independent three-application chain for outline leaf 4.3.",
+      "collapsedByDefault": true
+    }
+  ],
+  "presentation": {
+    "entryNodeIds": [
+      "source-run"
+    ],
+    "featuredNodeIds": [
+      "app-001",
+      "app-003",
+      "result-parable-cycle"
+    ],
+    "resultNodeIds": [
+      "app-001",
+      "app-003",
+      "result-parable-cycle"
+    ]
+  },
+  "warnings": [
+    {
+      "code": "outline-retry",
+      "severity": "info",
+      "message": "The first outline attempt returned 13 leaves and was rejected; the canonical application result is the successful 12-leaf retry.",
+      "nodeIds": [
+        "event-outline-attempt-1",
+        "app-003"
+      ],
+      "artifactIds": [
+        "art-007",
+        "art-010"
+      ]
+    }
+  ],
+  "extensions": {}
+}
